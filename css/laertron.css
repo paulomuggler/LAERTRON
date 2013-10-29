@@ -1,0 +1,22 @@
+html, body {
+  height: 100%
+}
+
+#stripCanvas
+{
+  width: 100%;
+}
+
+button
+{
+  margin-right: auto;
+  margin-left: auto;
+  width:100%;
+  text-align: center;
+}
+
+.modal img {
+  margin-right: auto;
+  margin-left: auto;
+  width:100%;
+}

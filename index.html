@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<META http-equiv="Content-Style-Type" content="text/css">
+	<title>LAERTRON</title>
+	<script src="js/jquery-2.0.3.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/postaNoFace.js"></script>
+	<script type="text/javascript" src="js/laertron.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/laertron.css">
+
+</head>
+<body>
+
+	<div id="fb-root"></div>
+	<script>
+	  window.fbAsyncInit = function() {
+	    // init the FB JS SDK
+	    FB.init({
+	      appId      : '542549515821319',                     // App ID from the app dashboard
+	      channelUrl : 'http://www.blab.art.br', 			  // Channel file for x-domain comms
+	      status     : false,                                 // Check Facebook Login status
+	      xfbml      : false                                  // Look for social plugins on the page
+	    });
+
+	    // Additional initialization code such as adding Event Listeners goes here
+	  };
+
+	  // Load the SDK asynchronously
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "http://connect.facebook.net/pt_BR/all.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>
+
+	<canvas id="stripCanvas" width="3504" height="1040"></canvas>
+    <script>
+
+
+    $( "#stripCanvas" ).css( "display", "none" );
+
+    </script>
+
+    <button id="btnGenerate">
+    	<img id="imgBtnGenerate" src="img/btn_arcade_raised.png" style="display:inline">
+    	<br>LAERTRON
+    </button>
+
+    <button id="btnFbShare">
+    	<img id="imgBtnFbShare" src="img/btn_fb_share.png" style="display:inline">
+    	<br>PUBLICAR NO FEICE
+	</button>
+
+	<button id="btnRestart">
+    	<img id="imgBtnRestart" src="img/btn_restart.png" style="display:inline">
+    	<br>PUBLICAR NO FEICE
+	</button>
+
+    <script>
+  		$(function() {
+  			$( "#btnGenerate" )
+      		.mousedown(function( event ) {
+	      		$( "#imgBtnGenerate" ).attr("src", "img/btn_arcade_pressed.png");
+	        	event.preventDefault();
+	        });
+
+    		$( "#btnGenerate" )
+      		.click(function( event ) {
+      			setTimeout( function (event) {
+      				generate();
+      				$("#stripCanvas" ).css( "display", "block" );
+      				}, 666 );
+	        	event.preventDefault();
+	        });
+
+	        $( "#btnGenerate" )
+      		.mouseup(function( event ) {
+      			setTimeout( function (event) {
+      				$( "#imgBtnGenerate" ).attr("src", "img/btn_arcade_raised.png");
+      				}, 333 );
+	        	event.preventDefault();
+	        });
+	        $( "#btnGenerate" )
+      		.mouseout(function( event ) {
+	      		$( "#imgBtnGenerate" ).attr("src", "img/btn_arcade_raised.png");
+	        	event.preventDefault();
+	        });
+
+	        $( "#btnFbShare" )
+      		.click(function( event ) {
+	      		  FB.login(function(response) {
+
+					FB.api("/me/permissions", function(response){ 
+						var data_length = response.data && response.data.length ? response.data.length : 0;
+						var permissions = data_length > 0 ? response.data[0] : {};
+
+						if (permissions["publish_stream"]) {
+							//alert("PermissÃ£o definida com sucesso!\nAgora vocÃª jÃ¡ pode fazer o upload da foto.");	
+							$('#modal_loading').modal('show')
+							postaNoFace(FB.getAccessToken(), "LAERTRON.png", "image/png", document.getElementById("stripCanvas"), "LAERTRON ATIVADO!!", fb_post_callback);
+							upload_timeout_func = setTimeout(show_error_dialog, 30000)
+						} else {
+							$('#modal_permissions_failed').modal('show')
+						}
+					});
+
+					//refazer click
+					//alert("novo login!");
+					//$("#btn_save").click();
+				}, {scope: 'photo_upload, publish_stream'});
+	        	event.preventDefault();
+	        });
+  });
+  </script>
+
+
+<div id="modal_loading" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Aguarde...</h4>
+      </div>
+      <div class="modal-body">
+        <img src="img/uploading.gif">
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div id="modal_upload_ok" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Parabéns! A sua tirinha exclusiva do laerte foi publicada com sucesso em seu mural!</h4>
+      </div>
+      <div class="modal-body">
+        <img src="img/upload_success.png">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div id="modal_upload_failed" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Ocorreu um erro durante a publicação em seu mural. Por favor tente novamente. </h4>
+      </div>
+      <div class="modal-body">
+        <img src="img/upload_error.png">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div id="modal_permissions_failed" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Você deve dar as permissões para o LAERTRON publicar em seu mural.</h4>
+      </div>
+      <div class="modal-body">
+        <img src="img/upload_error.png">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--
+<div id="modal_loading" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Aguarde...</h4>
+      </div>
+      <div class="modal-body">
+        <img src="img/uploading.gif">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
+</body>
+</html>
