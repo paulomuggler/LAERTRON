@@ -20,3 +20,46 @@ button
   margin-left: auto;
   width:100%;
 }
+
+ @-webkit-keyframes FadeInOut {
+   0% {
+     opacity:1;
+   }
+   25% {
+    opacity:1;
+  }
+  75% {
+    opacity:0;
+  }
+  100% {
+   opacity:0;
+ }
+}
+
+#pagina1 {
+  position:relative;
+
+  height:1280px;
+  width:1024px;
+  margin:0 auto;
+}
+#pagina1 img {
+  position:absolute;
+  left:0;
+}
+
+.pisca_rapido {
+  -webkit-animation-name: FadeInOut;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 0.333s;
+  -webkit-animation-direction: alternate;
+}
+
+.fadein {
+  -webkit-animation-name: FadeInOut;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: 1.666s;
+  -webkit-animation-direction: reverse;
+}

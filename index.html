@@ -13,37 +13,38 @@
 </head>
 <body>
 
-	<div id="fb-root"></div>
-	<script>
-	  window.fbAsyncInit = function() {
-	    // init the FB JS SDK
-	    FB.init({
-	      appId      : '542549515821319',                     // App ID from the app dashboard
-	      channelUrl : 'http://www.blab.art.br', 			  // Channel file for x-domain comms
-	      status     : false,                                 // Check Facebook Login status
-	      xfbml      : false                                  // Look for social plugins on the page
-	    });
+  <div id="fb-root"></div>
+  <script type="text/javascript" src="js/fb-init.js"></script>
 
-	    // Additional initialization code such as adding Event Listeners goes here
-	  };
+  <div id="pagina1" >
 
-	  // Load the SDK asynchronously
-	  (function(d, s, id){
-	     var js, fjs = d.getElementsByTagName(s)[0];
-	     if (d.getElementById(id)) {return;}
-	     js = d.createElement(s); js.id = id;
-	     js.src = "http://connect.facebook.net/pt_BR/all.js";
-	     fjs.parentNode.insertBefore(js, fjs);
-	   }(document, 'script', 'facebook-jssdk'));
-	</script>
+    <img id="pag1_fundo_A_rosa" src="img/pag1/laertron_pag1_fundo_A_rosa.png" class="fadein">
 
-	<canvas id="stripCanvas" width="3504" height="1040"></canvas>
-    <script>
+    <img id="pag1_fundo_B_verde" src="img/pag1/laertron_pag1_fundo_B_verde.png" class="fadein">
 
+    <img id="pag1_titulo_B_rosa_frente" src="img/pag1/laertron_pag1_titulo_B_rosa_frente.png" class="fadein">
 
-    $( "#stripCanvas" ).css( "display", "none" );
+    <img id="pag1_titulo_A_azul_tras" src="img/pag1/laertron_pag1_titulo_A_azul_tras.png" class="fadein">
 
+    <img id="pag1_botao_A_rosa_tras" src="img/pag1/laertron_pag1_botao_A_rosa_tras.png" class="fadein">
+
+    <img id="pag1_botao_B_azul_frente" src="img/pag1/laertron_pag1_botao_B_azul_frente.png" class="fadein">
+
+    <img id="pag1_botao_C_texto_entre" src="img/pag1/laertron_pag1_botao_C_texto_entre.png" class="fadein"> 
+
+    <script type="text/javascript">
+      setTimeout(function(){
+        $('#pag1_botao_C_texto_entre').removeClass("fadein");
+        $('#pag1_botao_C_texto_entre').addClass("pisca_rapido");
+        //alert("Hello")
+      },1888);    
     </script>
+
+  </div>
+
+<!--
+	<canvas id="stripCanvas" width="3504" height="1040"></canvas>
+  <script>$( "#stripCanvas" ).css( "display", "none" );</script>
 
     <button id="btnGenerate">
     	<img id="imgBtnGenerate" src="img/btn_arcade_raised.png" style="display:inline">
@@ -116,8 +117,7 @@
 	        });
   });
   </script>
-
-
+-->
 <div id="modal_loading" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">

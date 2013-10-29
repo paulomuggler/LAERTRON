@@ -31,6 +31,10 @@ function generate() {
   qD.src = './img/quadrinhos/D/D'.concat(qDidx,'.png');
 }
 
+function canvas_draw_strip(qIdx){
+  
+}
+
 var upload_timeout_func;
 
 function fb_post_callback(response) {
