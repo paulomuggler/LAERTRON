@@ -7,43 +7,146 @@ html, body {
   width: 100%;
 }
 
-button
-{
-  margin-right: auto;
-  margin-left: auto;
-  width:100%;
-  text-align: center;
-}
-
 .modal img {
   margin-right: auto;
   margin-left: auto;
   width:100%;
 }
 
-#pagina1 {
+.page-div {
   position:relative;
   height:1280px;
   width:1024px;
-  margin:0 auto;
+  margin:33px auto;
 }
 
-#pagina1 img {
+.page-div img {
   position:absolute;
   left:0;
 }
 
-#pagina1 #btnEntra {
+/*   PAGINA 1     */
+
+#bem-vindo #btnEntra {
   width:350px;
   height:132px;
   position:absolute;
   top: 580px;
   left: 806px;
+
+  z-index: 1000;
+
   background: transparent;
   border: none !important;
   font-size:0;
 }
 
+/*   PAGINA 2     */
+
+#mostraCores #seletor-cores {
+  /*
+  width:1280px;
+  height:1024px;
+  position:absolute;
+  top: 0px;
+  left: 0px;
+  */
+  
+  width:725px;
+  height:700px;
+  position:absolute;
+  top: 173px;
+  left: 511px;
+  
+  z-index: 1000;
+
+  background: transparent;
+  //background-color:rgba(255,0,0,0.5);
+  border: none !important;
+  font-size:0;
+}
+
+#mostraCores #seletor-cores #row_minotautro {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+#mostraCores #seletor-cores #row_espelho {
+	position: absolute;
+	top: 136px;
+	left: 0px;
+}
+
+#mostraCores #seletor-cores #row_totens {
+	position: absolute;
+	top: 278px;
+	left: 0px;
+}
+
+#mostraCores #seletor-cores #row_jogo {
+	position: absolute;
+	top: 420px;
+	left: 0px;
+}
+
+#mostraCores #seletor-cores #row_roda {
+	position: absolute;
+	top: 562px;
+	left: 0px;
+}
+
+#mostraCores #seletor-cores input {
+
+  position:absolute;
+  margin-right: 24px;
+
+  color: transparent;
+
+  z-index: 1000;
+
+  background: transparent;
+  font-size:0;
+}
+
+#mostraCores #seletor-cores input.btnRosa {
+  width:120px;
+  height:118px;
+  
+  left:0px;
+}
+#mostraCores #seletor-cores input.btnVerde {
+  width:120px;
+  height:118px;
+  
+  left:144px;
+}
+#mostraCores #seletor-cores input.btnAmarelo {
+  width:120px;
+  height:118px;
+  
+  left:282px;
+}
+#mostraCores #seletor-cores input.btnVermelho {
+  width:120px;
+  height:118px;
+  
+  left:425px;
+}
+#mostraCores #seletor-cores input.btnAzul {
+  width:120px;
+  height:118px;
+  
+  left:566px;
+}
+
+.selected {
+	border: 6px solid red;
+}
+
+input.selected {
+		//margin: -6px;
+}
 
 @-webkit-keyframes FadeIn00 {
    0% {
@@ -69,7 +172,7 @@ button
  }
 }
 
- @-webkit-keyframes EnterLeft {
+@-webkit-keyframes EnterLeft {
    0% {
      left:0px;
      
@@ -80,7 +183,7 @@ button
  }
 }
 
- @-webkit-keyframes EnterBottom {
+@-webkit-keyframes EnterBottom {
    0% {
     bottom:-150px;
     
@@ -89,7 +192,18 @@ button
     bottom:250px;
     
   }
+}
 
+@-webkit-keyframes ExitTop {
+   0% {
+    height:1280px;
+    
+   }
+
+   100% {
+    height:0px;
+    
+  }
 }
 
 .transparent {
@@ -135,3 +249,13 @@ button
   -webkit-animation-duration: 0.5s;
   -webkit-animation-direction: forward;
 }
+
+.exit-top {
+   height:0px;
+  -webkit-animation-name: ExitTop;
+  -webkit-animation-timing-function: cubic-bezier(0,0,0.33,1);
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-direction: forward;
+}
+

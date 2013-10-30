@@ -16,33 +16,36 @@
   <div id="fb-root"></div>
   <script type="text/javascript" src="js/fb-init.js"></script>
 
-  <div id="pagina1" >
+  <div id="bem-vindo" class="page-div">
 
+    <img id="pag1_fundo_ui_guide" src="img/pag1_bemvindo/laertron_pag1_ui_guide.png" class="transparent" style="-webkit-blend-mode: multiply">
 
-    <img id="pag1_fundo_ui_guide" src="img/pag1/laertron_pag1_ui_guide.png" class="transparent" style="-webkit-blend-mode: multiply">
+    <img id="pag1_fundo_A_rosa" src="img/pag1_bemvindo/laertron_pag1_fundo_A_rosa.png" class="transparent" style="-webkit-blend-mode: multiply">
 
-    <img id="pag1_fundo_A_rosa" src="img/pag1/laertron_pag1_fundo_A_rosa.png" class="transparent" style="-webkit-blend-mode: multiply">
+    <img id="pag1_fundo_B_verde" src="img/pag1_bemvindo/laertron_pag1_fundo_B_verde.png" class="transparent" style="-webkit-blend-mode: multiply">
 
-    <img id="pag1_fundo_B_verde" src="img/pag1/laertron_pag1_fundo_B_verde.png" class="transparent" style="-webkit-blend-mode: multiply">
+    <img id="laertron_pag1_fundo_todo" src="img/pag1_bemvindo/laertron_pag1_fundo_todo.png" class="transparent" style="-webkit-blend-mode: multiply">
 
-    <img id="laertron_pag1_fundo_todo" src="img/pag1/laertron_pag1_fundo_todo.png" class="transparent" style="-webkit-blend-mode: multiply">
+    <img id="pag1_fundo_A_rosa" src="img/pag1_bemvindo/laertron_pag1_fundo_todo.png" class="transparent">
 
-    <img id="pag1_fundo_A_rosa" src="img/pag1/laertron_pag1_fundo_todo.png" class="transparent">
+    <img id="pag1_titulo_B_rosa_frente" src="img/pag1_bemvindo/laertron_pag1_titulo_B_rosa_frente.png" class="transparent">
 
-    <img id="pag1_titulo_B_rosa_frente" src="img/pag1/laertron_pag1_titulo_B_rosa_frente.png" class="transparent">
+    <img id="pag1_titulo_A_azul_tras" src="img/pag1_bemvindo/laertron_pag1_titulo_A_azul_tras.png" class="transparent" style="-webkit-blend-mode: multiply">
 
-    <img id="pag1_titulo_A_azul_tras" src="img/pag1/laertron_pag1_titulo_A_azul_tras.png" class="transparent" style="-webkit-blend-mode: multiply">
+    <img id="pag1_botao_A_rosa_tras" src="img/pag1_bemvindo/laertron_pag1_botao_A_rosa_tras.png" class="transparent">
 
-    <img id="pag1_botao_A_rosa_tras" src="img/pag1/laertron_pag1_botao_A_rosa_tras.png" class="transparent">
+    <img id="pag1_botao_B_azul_frente" src="img/pag1_bemvindo/laertron_pag1_botao_B_azul_frente.png" class="transparent">
 
-    <img id="pag1_botao_B_azul_frente" src="img/pag1/laertron_pag1_botao_B_azul_frente.png" class="transparent">
-
-    <img id="pag1_botao_C_texto_entre" src="img/pag1/laertron_pag1_botao_C_texto_entre.png" class="transparent">
+    <img id="pag1_botao_C_texto_entre" src="img/pag1_bemvindo/laertron_pag1_botao_C_texto_entre.png" class="transparent">
 
     <button id="btnEntra" class=""></button>
 
     <script type="text/javascript">
     $(document).ready(function() {
+
+     // $('bem-vindo').webkitRequestFullScreen();
+
+      $('#btnEntra').attr('disabled', 'disabled'); //Disable
 
       setTimeout(function(){
 
@@ -71,21 +74,122 @@
           setTimeout(function(){
             $('#pag1_botao_C_texto_entre').removeClass("transparent");
             $('#pag1_botao_C_texto_entre').addClass("pisca-rapido");
+            $('#btnEntra').removeAttr('disabled');
             //alert("Hello")
             },4000);
       
           setTimeout(function(){
             $('#pag1_botao_A_rosa_tras').addClass("enter-left");
             $('#pag1_botao_B_azul_frente').addClass("enter-bottom");
+            $('#btnEntra').addClass("enter-bottom");
             $('#pag1_botao_A_rosa_tras').removeClass("transparent");
             $('#pag1_botao_B_azul_frente').removeClass("transparent");
           }, 2666);
 
         },333);
+
+    
+    $( "#btnEntra" ).click(function() {
+      $('#bem-vindo').addClass("exit-top");
+      setTimeout(function(){
+        $('#bem-vindo').addClass("transparent");
+      }, 500);
+      //alert("Hello");
+    });
         
     });
           
     </script>
+
+  </div>
+
+  <div id="mostraCores" class="page-div">
+
+    
+    <img id="pag2_botao_C_texto_entre" src="img/pag2_mostra_cores/laertron_cores_ui_guide.png" class="">
+
+    <div id="seletor-cores">
+
+      <div id="row_minotautro" class="seletor-cores-linha">
+        <input type="image" src="img/pag2_mostra_cores/btnRosa.png" id="mino-btnRosa" class="btnRosa selected"></input>
+        <input type="image" src="img/pag2_mostra_cores/btnVerde.png" id="mino-btnVerde" class="btnVerde"></input>
+        <input type="image" src="img/pag2_mostra_cores/btnAmarelo.png" id="mino-btnAmarelo" class="btnAmarelo"></input>
+        <input type="image" src="img/pag2_mostra_cores/btnVermelho.png" id="mino-btnVermelho" class="btnVermelho"></input>
+        <input type="image" src="img/pag2_mostra_cores/btnAzul.png" id="mino-btnAzul" class="btnAzul"></input>
+      </div>
+
+      <div id="row_espelho" class="seletor-cores-linha">
+        <input type="image" src="img/pag2_mostra_cores/btnRosa.png" id="espe-btnRosa" class="btnRosa selected"></button>
+        <input type="image" src="img/pag2_mostra_cores/btnVerde.png" id="espe-btnVerde" class="btnVerde"></button>
+        <input type="image" src="img/pag2_mostra_cores/btnAmarelo.png" id="espe-btnAmarelo" class="btnAmarelo"></button>
+        <input type="image" src="img/pag2_mostra_cores/btnVermelho.png" id="espe-btnVermelho" class="btnVermelho"></button>
+        <input type="image" src="img/pag2_mostra_cores/btnAzul.png" id="espe-btnAzul" class="btnAzul"></button>
+      </div>
+
+      <div id="row_totens" class="seletor-cores-linha">
+        <input type="image" src="img/pag2_mostra_cores/btnRosa.png" id="totens-btnRosa" class="btnRosa selected"></button>
+        <input type="image" src="img/pag2_mostra_cores/btnVerde.png" id="totens-btnVerde" class="btnVerde"></button>
+        <input type="image" src="img/pag2_mostra_cores/btnAmarelo.png" id="totens-btnAmarelo" class="btnAmarelo"></button>
+        <input type="image" src="img/pag2_mostra_cores/btnVermelho.png" id="totens-btnVermelho" class="btnVermelho"></button>
+        <input type="image" src="img/pag2_mostra_cores/btnAzul.png" id="totens-btnAzul" class="btnAzul"></button>
+      </div>
+
+      <div id="row_jogo" class="seletor-cores-linha">
+        <input type="image" src="img/pag2_mostra_cores/btnRosa.png" id="jogo-btnRosa" class="btnRosa selected"></button>
+        <input type="image" src="img/pag2_mostra_cores/btnVerde.png" id="jogo-btnVerde" class="btnVerde"></button>
+        <input type="image" src="img/pag2_mostra_cores/btnAmarelo.png" id="jogo-btnAmarelo" class="btnAmarelo"></button>
+        <input type="image" src="img/pag2_mostra_cores/btnVermelho.png" id="jogo-btnVermelho" class="btnVermelho"></button>
+        <input type="image" src="img/pag2_mostra_cores/btnAzul.png" id="jogo-btnAzul" class="btnAzul"></button>
+      </div>
+
+      <div id="row_roda" class="seletor-cores-linha">
+        <input type="image" src="img/pag2_mostra_cores/btnRosa.png" id="roda-btnRosa" class="btnRosa selected"></button>
+        <input type="image" src="img/pag2_mostra_cores/btnVerde.png" id="roda-btnVerde" class="btnVerde"></button>
+        <input type="image" src="img/pag2_mostra_cores/btnAmarelo.png" id="roda-btnAmarelo" class="btnAmarelo"></button>
+        <input type="image" src="img/pag2_mostra_cores/btnVermelho.png" id="roda-btnVermelho" class="btnVermelho"></button>
+        <input type="image" src="img/pag2_mostra_cores/btnAzul.png" id="roda-btnAzul" class="btnAzul"></button>
+      </div>
+
+
+
+      <script type="text/javascript">
+
+        $('#row_minotautro input').click(function() {
+          $('#row_minotautro input').removeClass('selected');
+          $(this).toggleClass('selected');
+          //alert("woo");
+        });
+
+        $('#row_espelho input').click(function() {
+          $('#row_espelho input').removeClass('selected');
+          $(this).toggleClass('selected');
+          //alert("woo");
+        });
+
+        $('#row_totens input').click(function() {
+          $('#row_totens input').removeClass('selected');
+          $(this).toggleClass('selected');
+          //alert("woo");
+        });
+
+        $('#row_jogo input').click(function() {
+          $('#row_jogo input').removeClass('selected');
+          $(this).toggleClass('selected');
+          //alert("woo");
+        });
+
+        $('#row_roda input').click(function() {
+          $('#row_roda input').removeClass('selected');
+          $(this).toggleClass('selected');
+          //alert("woo");
+        });
+
+
+      </script>
+      
+    </div>
+    
+    
 
   </div>
 
