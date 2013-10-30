@@ -21,45 +21,117 @@ button
   width:100%;
 }
 
- @-webkit-keyframes FadeInOut {
-   0% {
-     opacity:1;
-   }
-   25% {
-    opacity:1;
-  }
-  75% {
-    opacity:0;
-  }
-  100% {
-   opacity:0;
- }
-}
-
 #pagina1 {
   position:relative;
-
   height:1280px;
   width:1024px;
   margin:0 auto;
 }
+
 #pagina1 img {
   position:absolute;
   left:0;
 }
 
-.pisca_rapido {
-  -webkit-animation-name: FadeInOut;
-  -webkit-animation-timing-function: ease-in-out;
+#pagina1 #btnEntra {
+  width:350px;
+  height:132px;
+  position:absolute;
+  top: 580px;
+  left: 806px;
+  background: transparent;
+  border: none !important;
+  font-size:0;
+}
+
+
+@-webkit-keyframes FadeIn00 {
+   0% {
+     opacity:0;
+   }
+   25% {
+     opacity:0;
+   }
+   75% {
+   opacity:1;
+   }
+  100% {
+   opacity:1;
+ }
+}
+
+@-webkit-keyframes FadeIn01 {
+   0% {
+     opacity:0;
+   }
+  100% {
+   opacity:1;
+ }
+}
+
+ @-webkit-keyframes EnterLeft {
+   0% {
+     left:0px;
+     
+   }
+  100% {
+    left:750px;
+   
+ }
+}
+
+ @-webkit-keyframes EnterBottom {
+   0% {
+    bottom:-150px;
+    
+   }
+   100% {
+    bottom:250px;
+    
+  }
+
+}
+
+.transparent {
+	opacity: 0;
+}
+
+.pisca-rapido {
+  -webkit-animation-name: FadeIn01;
+  -webkit-animation-timing-function: cubic-bezier(0,0,0.33,1);
   -webkit-animation-iteration-count: infinite;
-  -webkit-animation-duration: 0.333s;
+  -webkit-animation-duration: 500ms;
   -webkit-animation-direction: alternate;
 }
 
-.fadein {
-  -webkit-animation-name: FadeInOut;
-  -webkit-animation-timing-function: ease-in-out;
+.bkg-fadein {
+  -webkit-animation-name: FadeIn00;
+  -webkit-animation-timing-function: cubic-bezier(1,0.5,1,1);
   -webkit-animation-iteration-count: 1;
-  -webkit-animation-duration: 1.666s;
+  -webkit-animation-duration: 200ms;
+  -webkit-animation-direction: forward;
+}
+
+.title-fadein {
+  -webkit-animation-name: FadeIn01;
+  -webkit-animation-timing-function: cubic-bezier(0.33,0,0.33,1);
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: 1500ms;
+  -webkit-animation-direction: forward;
+}
+
+.enter-left {
+  -webkit-animation-name: EnterLeft;
+  -webkit-animation-timing-function: cubic-bezier(0.92,0,1,1);
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: 0.5s;
   -webkit-animation-direction: reverse;
+}
+
+.enter-bottom {
+  -webkit-animation-name: EnterBottom;
+  -webkit-animation-timing-function: cubic-bezier(0,0,0.33,1);
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-direction: forward;
 }

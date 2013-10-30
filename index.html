@@ -18,26 +18,73 @@
 
   <div id="pagina1" >
 
-    <img id="pag1_fundo_A_rosa" src="img/pag1/laertron_pag1_fundo_A_rosa.png" class="fadein">
 
-    <img id="pag1_fundo_B_verde" src="img/pag1/laertron_pag1_fundo_B_verde.png" class="fadein">
+    <img id="pag1_fundo_ui_guide" src="img/pag1/laertron_pag1_ui_guide.png" class="transparent" style="-webkit-blend-mode: multiply">
 
-    <img id="pag1_titulo_B_rosa_frente" src="img/pag1/laertron_pag1_titulo_B_rosa_frente.png" class="fadein">
+    <img id="pag1_fundo_A_rosa" src="img/pag1/laertron_pag1_fundo_A_rosa.png" class="transparent" style="-webkit-blend-mode: multiply">
 
-    <img id="pag1_titulo_A_azul_tras" src="img/pag1/laertron_pag1_titulo_A_azul_tras.png" class="fadein">
+    <img id="pag1_fundo_B_verde" src="img/pag1/laertron_pag1_fundo_B_verde.png" class="transparent" style="-webkit-blend-mode: multiply">
 
-    <img id="pag1_botao_A_rosa_tras" src="img/pag1/laertron_pag1_botao_A_rosa_tras.png" class="fadein">
+    <img id="laertron_pag1_fundo_todo" src="img/pag1/laertron_pag1_fundo_todo.png" class="transparent" style="-webkit-blend-mode: multiply">
 
-    <img id="pag1_botao_B_azul_frente" src="img/pag1/laertron_pag1_botao_B_azul_frente.png" class="fadein">
+    <img id="pag1_fundo_A_rosa" src="img/pag1/laertron_pag1_fundo_todo.png" class="transparent">
 
-    <img id="pag1_botao_C_texto_entre" src="img/pag1/laertron_pag1_botao_C_texto_entre.png" class="fadein"> 
+    <img id="pag1_titulo_B_rosa_frente" src="img/pag1/laertron_pag1_titulo_B_rosa_frente.png" class="transparent">
+
+    <img id="pag1_titulo_A_azul_tras" src="img/pag1/laertron_pag1_titulo_A_azul_tras.png" class="transparent" style="-webkit-blend-mode: multiply">
+
+    <img id="pag1_botao_A_rosa_tras" src="img/pag1/laertron_pag1_botao_A_rosa_tras.png" class="transparent">
+
+    <img id="pag1_botao_B_azul_frente" src="img/pag1/laertron_pag1_botao_B_azul_frente.png" class="transparent">
+
+    <img id="pag1_botao_C_texto_entre" src="img/pag1/laertron_pag1_botao_C_texto_entre.png" class="transparent">
+
+    <button id="btnEntra" class=""></button>
 
     <script type="text/javascript">
+    $(document).ready(function() {
+
       setTimeout(function(){
-        $('#pag1_botao_C_texto_entre').removeClass("fadein");
-        $('#pag1_botao_C_texto_entre').addClass("pisca_rapido");
-        //alert("Hello")
-      },1888);    
+
+          $('#laertron_pag1_fundo_todo').addClass("bkg-fadein");
+          $('#laertron_pag1_fundo_todo').removeClass("transparent");
+
+          /*
+          $('#pag1_fundo_A_rosa').addClass("bkg-fadein");
+          $('#pag1_fundo_B_verde').addClass("bkg-fadein");
+          $('#pag1_fundo_A_rosa').removeClass("transparent");
+          $('#pag1_fundo_B_verde').removeClass("transparent");
+          */
+
+          setTimeout(function(){
+            
+            $('#pag1_titulo_B_rosa_frente').addClass("title-fadein");
+            $('#pag1_titulo_A_azul_tras').addClass("title-fadein");
+            $('#pag1_titulo_B_rosa_frente').removeClass("transparent");
+            $('#pag1_titulo_A_azul_tras').removeClass("transparent");
+            
+            //$('#pag1_botao_C_texto_entre').addClass("title-fadein");
+          },1333);
+
+          //alert("Hello")
+
+          setTimeout(function(){
+            $('#pag1_botao_C_texto_entre').removeClass("transparent");
+            $('#pag1_botao_C_texto_entre').addClass("pisca-rapido");
+            //alert("Hello")
+            },4000);
+      
+          setTimeout(function(){
+            $('#pag1_botao_A_rosa_tras').addClass("enter-left");
+            $('#pag1_botao_B_azul_frente').addClass("enter-bottom");
+            $('#pag1_botao_A_rosa_tras').removeClass("transparent");
+            $('#pag1_botao_B_azul_frente').removeClass("transparent");
+          }, 2666);
+
+        },333);
+        
+    });
+          
     </script>
 
   </div>
