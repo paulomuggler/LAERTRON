@@ -1,5 +1,6 @@
 html, body {
   height: 100%
+  overflow:hidden;
 }
 
 #stripCanvas
@@ -21,9 +22,10 @@ html, body {
 
 .page-div {
   position:relative;
-  height:1280px;
-  width:1024px;
+  width:1280px;
+  height:1024px;
   margin:33px auto;
+  overflow: hidden;
 }
 
 .page-div img {
@@ -257,11 +259,11 @@ input.selected {
 
 @-webkit-keyframes EnterLeft {
    0% {
-     left:0px;
+     left:1000px;
      
    }
   100% {
-    left:750px;
+    left:0px;
    
  }
 }
@@ -279,11 +281,11 @@ input.selected {
 
 @-webkit-keyframes EnterBottom {
    0% {
-    bottom:-150px;
+    bottom:-1000px;
     
    }
    100% {
-    bottom:250px;
+    bottom:0px;
     
   }
 }
@@ -300,7 +302,7 @@ input.selected {
 
 @-webkit-keyframes ExitTop {
    0% {
-    height:1280px;
+    height:1024px;
     
    }
 
@@ -353,7 +355,7 @@ input.selected {
   -webkit-animation-timing-function: cubic-bezier(0.92,0,1,1);
   -webkit-animation-iteration-count: 1;
   -webkit-animation-duration: 0.5s;
-  -webkit-animation-direction: reverse;
+  -webkit-animation-direction: forward;
 }
 
 .enter-right {
@@ -361,7 +363,7 @@ input.selected {
   -webkit-animation-timing-function: cubic-bezier(0.92,0,1,1);
   -webkit-animation-iteration-count: 1;
   -webkit-animation-duration: 0.5s;
-  -webkit-animation-direction: reverse;
+  -webkit-animation-direction: forward;
 }
 
 
