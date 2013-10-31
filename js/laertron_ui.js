@@ -126,7 +126,7 @@ function pag2_mostra_botao_criar(){
 	setTimeout(function(){
 		$('#pag2_botao_A_preto_tras').addClass("enter-left");
 		$('#pag2_botao_B_branco_frente').addClass("enter-bottom");
-		$('#btnEntra').addClass("enter-bottom");
+		$('#btnCriar').addClass("enter-bottom");
 		$('#pag2_botao_A_preto_tras').removeClass("transparent");
 		$('#pag2_botao_B_branco_frente').removeClass("transparent");
 	}, 100);
