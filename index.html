@@ -7,6 +7,7 @@
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/postaNoFace.js"></script>
 	<script type="text/javascript" src="js/laertron.js"></script>
+  <script type="text/javascript" src="js/laertron_ui.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/laertron.css">
 
@@ -16,14 +17,12 @@
   <div id="fb-root"></div>
   <script type="text/javascript" src="js/fb-init.js"></script>
 
-  <div id="bem-vindo" class="page-div">
+  <div id="bem-vindo" class="page-div" style="display:none;">
 
-    <img id="pag1_fundo_ui_guide" src="img/pag1_bemvindo/laertron_pag1_ui_guide.png" class="transparent" style="-webkit-blend-mode: multiply">
-
+<!--
     <img id="pag1_fundo_A_rosa" src="img/pag1_bemvindo/laertron_pag1_fundo_A_rosa.png" class="transparent" style="-webkit-blend-mode: multiply">
-
     <img id="pag1_fundo_B_verde" src="img/pag1_bemvindo/laertron_pag1_fundo_B_verde.png" class="transparent" style="-webkit-blend-mode: multiply">
-
+-->
     <img id="laertron_pag1_fundo_todo" src="img/pag1_bemvindo/laertron_pag1_fundo_todo.png" class="transparent" style="-webkit-blend-mode: multiply">
 
     <img id="pag1_fundo_A_rosa" src="img/pag1_bemvindo/laertron_pag1_fundo_todo.png" class="transparent">
@@ -38,116 +37,75 @@
 
     <img id="pag1_botao_C_texto_entre" src="img/pag1_bemvindo/laertron_pag1_botao_C_texto_entre.png" class="transparent">
 
-    <button id="btnEntra" class=""></button>
+    <button id="btnEntra" class=""></input>
 
     <script type="text/javascript">
-    $(document).ready(function() {
 
-     // $('bem-vindo').webkitRequestFullScreen();
+      $(document).ready(function() {
+        // $('bem-vindo').webkitRequestFullScreen();
+        //pag1Transitions();
+        pag3Transitions();
+      });
 
-      $('#btnEntra').attr('disabled', 'disabled'); //Disable
-
-      setTimeout(function(){
-
-          $('#laertron_pag1_fundo_todo').addClass("bkg-fadein");
-          $('#laertron_pag1_fundo_todo').removeClass("transparent");
-
-          /*
-          $('#pag1_fundo_A_rosa').addClass("bkg-fadein");
-          $('#pag1_fundo_B_verde').addClass("bkg-fadein");
-          $('#pag1_fundo_A_rosa').removeClass("transparent");
-          $('#pag1_fundo_B_verde').removeClass("transparent");
-          */
-
-          setTimeout(function(){
-            
-            $('#pag1_titulo_B_rosa_frente').addClass("title-fadein");
-            $('#pag1_titulo_A_azul_tras').addClass("title-fadein");
-            $('#pag1_titulo_B_rosa_frente').removeClass("transparent");
-            $('#pag1_titulo_A_azul_tras').removeClass("transparent");
-            
-            //$('#pag1_botao_C_texto_entre').addClass("title-fadein");
-          },1333);
-
-          //alert("Hello")
-
-          setTimeout(function(){
-            $('#pag1_botao_C_texto_entre').removeClass("transparent");
-            $('#pag1_botao_C_texto_entre').addClass("pisca-rapido");
-            $('#btnEntra').removeAttr('disabled');
-            //alert("Hello")
-            },4000);
-      
-          setTimeout(function(){
-            $('#pag1_botao_A_rosa_tras').addClass("enter-left");
-            $('#pag1_botao_B_azul_frente').addClass("enter-bottom");
-            $('#btnEntra').addClass("enter-bottom");
-            $('#pag1_botao_A_rosa_tras').removeClass("transparent");
-            $('#pag1_botao_B_azul_frente').removeClass("transparent");
-          }, 2666);
-
-        },333);
-
-    
-    $( "#btnEntra" ).click(function() {
-      $('#bem-vindo').addClass("exit-top");
-      setTimeout(function(){
-        $('#bem-vindo').addClass("transparent");
-      }, 500);
-      //alert("Hello");
-    });
-        
-    });
-          
     </script>
 
   </div>
 
-  <div id="mostraCores" class="page-div">
+  <div id="mostraCores" class="page-div" style="display:none;">
 
     
-    <img id="pag2_botao_C_texto_entre" src="img/pag2_mostra_cores/laertron_cores_ui_guide.png" class="">
+    <img id="pag2_fundo_todo" src="img/pag2_mostra_cores/laertron_pag2_fundo_todo.png" class="transparent">
+
+    <img id="pag2_texto_selecione" src="img/pag2_mostra_cores/laertron_pag2_texto_selecione.png" class="transparent">
+
+    <img id="pag2_texto_minotauro" src="img/pag2_mostra_cores/laertron_pag2_texto_minotauro.png" class="transparent">
+    <img id="pag2_texto_espelho" src="img/pag2_mostra_cores/laertron_pag2_texto_espelho.png" class="transparent">
+    <img id="pag2_texto_totens" src="img/pag2_mostra_cores/laertron_pag2_texto_totens.png" class="transparent">
+    <img id="pag2_texto_jogo" src="img/pag2_mostra_cores/laertron_pag2_texto_jogo.png" class="transparent">
+    <img id="pag2_texto_roda" src="img/pag2_mostra_cores/laertron_pag2_texto_roda.png" class="transparent">
+
+    <img id="pag2_botoes_cores" src="img/pag2_mostra_cores/laertron_pag2_botoes_cores.png" class="transparent">
 
     <div id="seletor-cores">
 
       <div id="row_minotautro" class="seletor-cores-linha">
-        <input type="image" src="img/pag2_mostra_cores/btnRosa.png" id="mino-btnRosa" class="btnRosa selected"></input>
-        <input type="image" src="img/pag2_mostra_cores/btnVerde.png" id="mino-btnVerde" class="btnVerde"></input>
-        <input type="image" src="img/pag2_mostra_cores/btnAmarelo.png" id="mino-btnAmarelo" class="btnAmarelo"></input>
-        <input type="image" src="img/pag2_mostra_cores/btnVermelho.png" id="mino-btnVermelho" class="btnVermelho"></input>
-        <input type="image" src="img/pag2_mostra_cores/btnAzul.png" id="mino-btnAzul" class="btnAzul"></input>
+        <input type="button" id="mino-btnRosa" class="btnRosa selected"></input>
+        <input type="button" class="btnVerde"></input>
+        <input type="button"  id="mino-btnAmarelo" class="btnAmarelo"></input>
+        <input type="button"  id="mino-btnVermelho" class="btnVermelho"></input>
+        <input type="button"  id="mino-btnAzul" class="btnAzul"></input>
       </div>
 
       <div id="row_espelho" class="seletor-cores-linha">
-        <input type="image" src="img/pag2_mostra_cores/btnRosa.png" id="espe-btnRosa" class="btnRosa selected"></button>
-        <input type="image" src="img/pag2_mostra_cores/btnVerde.png" id="espe-btnVerde" class="btnVerde"></button>
-        <input type="image" src="img/pag2_mostra_cores/btnAmarelo.png" id="espe-btnAmarelo" class="btnAmarelo"></button>
-        <input type="image" src="img/pag2_mostra_cores/btnVermelho.png" id="espe-btnVermelho" class="btnVermelho"></button>
-        <input type="image" src="img/pag2_mostra_cores/btnAzul.png" id="espe-btnAzul" class="btnAzul"></button>
+        <input type="button"  id="espe-btnRosa" class="btnRosa "></input>
+        <input type="button"  id="espe-btnVerde" class="btnVerde selected"></input>
+        <input type="button"  id="espe-btnAmarelo" class="btnAmarelo"></input>
+        <input type="button"  id="espe-btnVermelho" class="btnVermelho"></input>
+        <input type="button"  id="espe-btnAzul" class="btnAzul"></input>
       </div>
 
       <div id="row_totens" class="seletor-cores-linha">
-        <input type="image" src="img/pag2_mostra_cores/btnRosa.png" id="totens-btnRosa" class="btnRosa selected"></button>
-        <input type="image" src="img/pag2_mostra_cores/btnVerde.png" id="totens-btnVerde" class="btnVerde"></button>
-        <input type="image" src="img/pag2_mostra_cores/btnAmarelo.png" id="totens-btnAmarelo" class="btnAmarelo"></button>
-        <input type="image" src="img/pag2_mostra_cores/btnVermelho.png" id="totens-btnVermelho" class="btnVermelho"></button>
-        <input type="image" src="img/pag2_mostra_cores/btnAzul.png" id="totens-btnAzul" class="btnAzul"></button>
+        <input type="button"  id="totens-btnRosa" class="btnRosa "></input>
+        <input type="button"  id="totens-btnVerde" class="btnVerde"></input>
+        <input type="button"  id="totens-btnAmarelo" class="btnAmarelo selected"></input>
+        <input type="button"  id="totens-btnVermelho" class="btnVermelho"></input>
+        <input type="button"  id="totens-btnAzul" class="btnAzul"></input>
       </div>
 
       <div id="row_jogo" class="seletor-cores-linha">
-        <input type="image" src="img/pag2_mostra_cores/btnRosa.png" id="jogo-btnRosa" class="btnRosa selected"></button>
-        <input type="image" src="img/pag2_mostra_cores/btnVerde.png" id="jogo-btnVerde" class="btnVerde"></button>
-        <input type="image" src="img/pag2_mostra_cores/btnAmarelo.png" id="jogo-btnAmarelo" class="btnAmarelo"></button>
-        <input type="image" src="img/pag2_mostra_cores/btnVermelho.png" id="jogo-btnVermelho" class="btnVermelho"></button>
-        <input type="image" src="img/pag2_mostra_cores/btnAzul.png" id="jogo-btnAzul" class="btnAzul"></button>
+        <input type="button"  id="jogo-btnRosa" class="btnRosa "></input>
+        <input type="button"  id="jogo-btnVerde" class="btnVerde"></input>
+        <input type="button"  id="jogo-btnAmarelo" class="btnAmarelo "></input>
+        <input type="button"  id="jogo-btnVermelho" class="btnVermelho selected"></input>
+        <input type="button"  id="jogo-btnAzul" class="btnAzul"></input>
       </div>
 
       <div id="row_roda" class="seletor-cores-linha">
-        <input type="image" src="img/pag2_mostra_cores/btnRosa.png" id="roda-btnRosa" class="btnRosa selected"></button>
-        <input type="image" src="img/pag2_mostra_cores/btnVerde.png" id="roda-btnVerde" class="btnVerde"></button>
-        <input type="image" src="img/pag2_mostra_cores/btnAmarelo.png" id="roda-btnAmarelo" class="btnAmarelo"></button>
-        <input type="image" src="img/pag2_mostra_cores/btnVermelho.png" id="roda-btnVermelho" class="btnVermelho"></button>
-        <input type="image" src="img/pag2_mostra_cores/btnAzul.png" id="roda-btnAzul" class="btnAzul"></button>
+        <input type="button"  id="roda-btnRosa" class="btnRosa "></input>
+        <input type="button"  id="roda-btnVerde" class="btnVerde"></input>
+        <input type="button"  id="roda-btnAmarelo" class="btnAmarelo"></input>
+        <input type="button"  id="roda-btnVermelho" class="btnVermelho"></input>
+        <input type="button"  id="roda-btnAzul" class="btnAzul selected"></input>
       </div>
 
 
@@ -184,11 +142,38 @@
           //alert("woo");
         });
 
-
       </script>
       
     </div>
+
+    <img id="pag2_botao_A_preto_tras" src="img/pag2_mostra_cores/laertron_pag2_botao_A_preto_tras.png" class="transparent">
+
+    <img id="pag2_botao_B_branco_frente" src="img/pag2_mostra_cores/laertron_pag2_botao_B_branco_frente.png" class="transparent">
+
+    <img id="pag2_botao_C_texto_criar" src="img/pag2_mostra_cores/laertron_pag2_botao_C_texto_criar.png" class="transparent">
     
+    <button id="btnCriar" class=""></input>
+
+    <script type="text/javascript">
+
+ 
+       // $('bem-vindo').webkitRequestFullScreen();
+
+
+          
+    </script>
+    </script>
+
+  </div>
+
+  <div id"aTira" class="page-div">
+    
+    <img id="pag3_fundo" src="img/pag3_tira/pag3_fundo.png" class="transparent">
+    <img id="pag3_titulo" src="img/pag3_tira/pag3_titulo.png" class="transparent">
+    <img id="pag3_compartilhe" src="img/pag3_tira/pag3_compartilhe.png" class="transparent">
+    <img id="pag3_fb" src="img/pag3_tira/pag3_fb.png" class="transparent">
+
+    <canvas id="stripCanvas" width="3504" height="1040"></canvas>
     
 
   </div>
@@ -200,17 +185,17 @@
     <button id="btnGenerate">
     	<img id="imgBtnGenerate" src="img/btn_arcade_raised.png" style="display:inline">
     	<br>LAERTRON
-    </button>
+    </input>
 
     <button id="btnFbShare">
     	<img id="imgBtnFbShare" src="img/btn_fb_share.png" style="display:inline">
     	<br>PUBLICAR NO FEICE
-	</button>
+	</input>
 
 	<button id="btnRestart">
     	<img id="imgBtnRestart" src="img/btn_restart.png" style="display:inline">
     	<br>PUBLICAR NO FEICE
-	</button>
+	</input>
 
     <script>
   		$(function() {
@@ -292,7 +277,7 @@
         <img src="img/upload_success.png">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</input>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -308,7 +293,7 @@
         <img src="img/upload_error.png">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</input>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -324,7 +309,7 @@
         <img src="img/upload_error.png">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</input>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -335,15 +320,15 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</input>
         <h4 class="modal-title">Aguarde...</h4>
       </div>
       <div class="modal-body">
         <img src="img/uploading.gif">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</input>
+        <button type="button" class="btn btn-primary">Save changes</input>
       </div>
     </div>
   </div>

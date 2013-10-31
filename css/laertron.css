@@ -4,7 +4,13 @@ html, body {
 
 #stripCanvas
 {
-  width: 100%;
+  position: absolute;
+  top: 310px;
+  left: 27px;
+  width: 1225px;
+  height: 370px;
+  z-index: 10000;
+  display: block;
 }
 
 .modal img {
@@ -105,7 +111,22 @@ html, body {
 
   z-index: 1000;
 
+  border: 0px solid red;
   background: transparent;
+  font-size:0;
+}
+
+#mostraCores #btnCriar {
+  width:312px;
+  height:90px;
+  position:absolute;
+  top: 896px;
+  left: 905px;
+
+  z-index: 1000;
+
+  background: transparent;
+  border: none !important;
   font-size:0;
 }
 
@@ -140,14 +161,17 @@ html, body {
   left:566px;
 }
 
-.selected {
+#mostraCores #seletor-cores input.selected {
 	border: 6px solid red;
 }
-
+/*
 input.selected {
-		//margin: -6px;
+	border: 6px solid red;
 }
-
+*/
+#aTira #pag3_fundo {
+	z-index: -1;
+}
 @-webkit-keyframes FadeIn00 {
    0% {
      opacity:0;
@@ -183,6 +207,17 @@ input.selected {
  }
 }
 
+@-webkit-keyframes EnterRight {
+   0% {
+     right:750px;
+     
+   }
+  100% {
+    right:0px;
+   
+ }
+}
+
 @-webkit-keyframes EnterBottom {
    0% {
     bottom:-150px;
@@ -191,6 +226,16 @@ input.selected {
    100% {
     bottom:250px;
     
+  }
+}
+
+@-webkit-keyframes EnterTop {
+   0% {
+    top:-150px;
+    
+   }
+   100% {
+    top:0px;  
   }
 }
 
@@ -242,6 +287,15 @@ input.selected {
   -webkit-animation-direction: reverse;
 }
 
+.enter-right {
+  -webkit-animation-name: EnterRight;
+  -webkit-animation-timing-function: cubic-bezier(0.92,0,1,1);
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-direction: reverse;
+}
+
+
 .enter-bottom {
   -webkit-animation-name: EnterBottom;
   -webkit-animation-timing-function: cubic-bezier(0,0,0.33,1);
@@ -250,12 +304,20 @@ input.selected {
   -webkit-animation-direction: forward;
 }
 
+.enter-top {
+  -webkit-animation-name: EnterTop;
+  -webkit-animation-timing-function: cubic-bezier(0,0,0.33,1);
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-direction: forward;
+}
+
 .exit-top {
    height:0px;
   -webkit-animation-name: ExitTop;
   -webkit-animation-timing-function: cubic-bezier(0,0,0.33,1);
   -webkit-animation-iteration-count: 1;
-  -webkit-animation-duration: 0.5s;
+  -webkit-animation-duration: 1.5s;
   -webkit-animation-direction: forward;
 }
 

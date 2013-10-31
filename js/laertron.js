@@ -1,41 +1,102 @@
-function generate() {
+var qA, qB, qC, qD;
+var indices;
+var max_quadros = 31;
+var initi = false;
+
+function init() {
+
+  initi = true;
+
+  indices = [];
+
+  qA = new Image();
+  qB = new Image();
+  qC = new Image();
+  qD = new Image();
+
 
   var canvas = document.getElementById('stripCanvas');
   var context = canvas.getContext('2d');
-  var qA = new Image();
-  var qB = new Image();
-  var qC = new Image();
-  var qD = new Image();
 
   qA.onload = function() {
     context.drawImage(qA, 0, 0);
   };
+
   qB.onload = function() {
     context.drawImage(qB, 876, 0);
   };
+
   qC.onload = function() {
     context.drawImage(qC, 2*876, 0);
   };
+
   qD.onload = function() {
     context.drawImage(qD, 3*876, 0);
   };
 
-  qAidx = Math.floor((Math.random()*31)+1);
-  qBidx = Math.floor((Math.random()*31)+1);
-  qCidx = Math.floor((Math.random()*31)+1);
-  qDidx = Math.floor((Math.random()*31)+1);
-
-  qA.src = './img/quadrinhos/A/A'.concat(qAidx,'.png');
-  qB.src = './img/quadrinhos/B/B'.concat(qBidx,'.png');
-  qC.src = './img/quadrinhos/C/C'.concat(qCidx,'.png');
-  qD.src = './img/quadrinhos/D/D'.concat(qDidx,'.png');
 }
 
-function canvas_draw_strip(qIdx){
+function generate() {
+
+
+  indices[0] = Math.floor((Math.random()*max_quadros)+1);  
+  indices[1] = Math.floor((Math.random()*max_quadros)+1);  
+  indices[2] = Math.floor((Math.random()*max_quadros)+1);  
+  indices[3] = Math.floor((Math.random()*max_quadros)+1);
   
+
 }
 
-var upload_timeout_func;
+function display(idxes){
+
+  qA.src = './img/quadrinhos/A/A'.concat(idxes[0],'.png');
+  qB.src = './img/quadrinhos/B/B'.concat(idxes[1],'.png');
+  qC.src = './img/quadrinhos/C/C'.concat(idxes[2],'.png');
+  qD.src = './img/quadrinhos/D/D'.concat(idxes[3],'.png');
+
+}
+
+function gera_quadro(img, idx1){
+  dice = Math.floor((Math.random()*max_quadros)+1);
+  img.src = './img/quadrinhos/'.concat(idx1,'/'.concat(idx1,dice,'.png'));
+}
+
+function mostra_nova_tira(){
+  if(!initi) init();
+  gera_quadro(qA, 'A');
+  gera_quadro(qB, 'B');
+  gera_quadro(qC, 'C');
+  gera_quadro(qD, 'D');
+}
+
+function sorteio_animado(){
+
+  tqA = setInterval(function(){
+    gera_quadro(qA, 'A');
+  },123);
+
+  tqB = setInterval(function(){
+    gera_quadro(qB, 'B');
+  },78);
+
+  tqC = setInterval(function(){
+    gera_quadro(qC, 'C');
+  },147);
+
+  tqD = setInterval(function(){
+    gera_quadro(qD, 'D');
+  },97);
+
+  setTimeout(function(){
+    clearInterval(tqA);
+    clearInterval(tqB);
+    clearInterval(tqC);
+    clearInterval(tqD);
+  }, 6000);
+
+}
+
+
 
 function fb_post_callback(response) {
 
@@ -57,3 +118,4 @@ function show_error_dialog(e){
   $('#modal_upload_failed').modal('show');
   //cancelar request ajax
 }
+
