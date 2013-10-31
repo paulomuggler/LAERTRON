@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<META http-equiv="Content-Style-Type" content="text/css">
+	<title>LAERTRON</title>
+	<script src="js/jquery-2.0.3.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/postaNoFace.js"></script>
+	<script type="text/javascript" src="js/laertron.js"></script>
+  <script type="text/javascript" src="js/laertron_ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/laertron.css">
+
+</head>
+<body>
+
+  <div id="fb-root"></div>
+  <script type="text/javascript" src="js/fb-init.js"></script>
+
+  <div id="bem-vindo" class="page-div">
+
+<!--
+    <img id="pag1_fundo_A_rosa" src="img/pag1_bemvindo/laertron_pag1_fundo_A_rosa.png" class="transparent" style="-webkit-blend-mode: multiply">
+    <img id="pag1_fundo_B_verde" src="img/pag1_bemvindo/laertron_pag1_fundo_B_verde.png" class="transparent" style="-webkit-blend-mode: multiply">
+-->
+    <img id="laertron_pag1_fundo_todo" src="img/pag1_bemvindo/laertron_pag1_fundo_todo.png" class="transparent" style="-webkit-blend-mode: multiply">
+
+    <img id="pag1_fundo_A_rosa" src="img/pag1_bemvindo/laertron_pag1_fundo_todo.png" class="transparent">
+
+    <img id="pag1_titulo_B_rosa_frente" src="img/pag1_bemvindo/laertron_pag1_titulo_B_rosa_frente.png" class="transparent">
+
+    <img id="pag1_titulo_A_azul_tras" src="img/pag1_bemvindo/laertron_pag1_titulo_A_azul_tras.png" class="transparent" style="-webkit-blend-mode: multiply">
+
+    <img id="pag1_botao_A_rosa_tras" src="img/pag1_bemvindo/laertron_pag1_botao_A_rosa_tras.png" class="transparent">
+
+    <img id="pag1_botao_B_azul_frente" src="img/pag1_bemvindo/laertron_pag1_botao_B_azul_frente.png" class="transparent">
+
+    <img id="pag1_botao_C_texto_entre" src="img/pag1_bemvindo/laertron_pag1_botao_C_texto_entre.png" class="transparent">
+
+    <button id="btnEntra" class=""></input>
+
+    <script type="text/javascript">
+
+      $(document).ready(function() {
+        // $('bem-vindo').webkitRequestFullScreen();
+        //pag1Transitions();
+        pag1Transitions();
+      });
+
+    </script>
+
+  </div>
+
+  <div id="mostraCores" class="page-div" >
+
+    
+    <img id="pag2_fundo_todo" src="img/pag2_mostra_cores/laertron_pag2_fundo_todo.png" class="transparent">
+
+    <img id="pag2_texto_selecione" src="img/pag2_mostra_cores/laertron_pag2_texto_selecione.png" class="transparent">
+
+    <img id="pag2_texto_minotauro" src="img/pag2_mostra_cores/laertron_pag2_texto_minotauro.png" class="transparent">
+    <img id="pag2_texto_espelho" src="img/pag2_mostra_cores/laertron_pag2_texto_espelho.png" class="transparent">
+    <img id="pag2_texto_totens" src="img/pag2_mostra_cores/laertron_pag2_texto_totens.png" class="transparent">
+    <img id="pag2_texto_jogo" src="img/pag2_mostra_cores/laertron_pag2_texto_jogo.png" class="transparent">
+    <img id="pag2_texto_roda" src="img/pag2_mostra_cores/laertron_pag2_texto_roda.png" class="transparent">
+
+    <img id="pag2_botoes_cores" src="img/pag2_mostra_cores/laertron_pag2_botoes_cores.png" class="transparent">
+
+    <div id="seletor-cores">
+
+      <div id="row_minotautro" class="seletor-cores-linha">
+        <input type="button" id="mino-btnRosa" class="btnRosa "></input>
+        <input type="button"  id="mino-btnVerde" class="btnVerde"></input>
+        <input type="button"  id="mino-btnAmarelo" class="btnAmarelo"></input>
+        <input type="button"  id="mino-btnVermelho" class="btnVermelho"></input>
+        <input type="button"  id="mino-btnAzul" class="btnAzul"></input>
+      </div>
+
+      <div id="row_espelho" class="seletor-cores-linha">
+        <input type="button"  id="espe-btnRosa" class="btnRosa "></input>
+        <input type="button"  id="espe-btnVerde" class="btnVerde "></input>
+        <input type="button"  id="espe-btnAmarelo" class="btnAmarelo"></input>
+        <input type="button"  id="espe-btnVermelho" class="btnVermelho"></input>
+        <input type="button"  id="espe-btnAzul" class="btnAzul"></input>
+      </div>
+
+      <div id="row_totens" class="seletor-cores-linha">
+        <input type="button"  id="totens-btnRosa" class="btnRosa "></input>
+        <input type="button"  id="totens-btnVerde" class="btnVerde"></input>
+        <input type="button"  id="totens-btnAmarelo" class="btnAmarelo "></input>
+        <input type="button"  id="totens-btnVermelho" class="btnVermelho"></input>
+        <input type="button"  id="totens-btnAzul" class="btnAzul"></input>
+      </div>
+
+      <div id="row_jogo" class="seletor-cores-linha">
+        <input type="button"  id="jogo-btnRosa" class="btnRosa "></input>
+        <input type="button"  id="jogo-btnVerde" class="btnVerde"></input>
+        <input type="button"  id="jogo-btnAmarelo" class="btnAmarelo "></input>
+        <input type="button"  id="jogo-btnVermelho" class="btnVermelho "></input>
+        <input type="button"  id="jogo-btnAzul" class="btnAzul"></input>
+      </div>
+
+      <div id="row_roda" class="seletor-cores-linha">
+        <input type="button"  id="roda-btnRosa" class="btnRosa "></input>
+        <input type="button"  id="roda-btnVerde" class="btnVerde"></input>
+        <input type="button"  id="roda-btnAmarelo" class="btnAmarelo"></input>
+        <input type="button"  id="roda-btnVermelho" class="btnVermelho"></input>
+        <input type="button"  id="roda-btnAzul" class="btnAzul "></input>
+      </div>
+
+
+
+      <script type="text/javascript">
+      var row0Selected = false;
+      var row1Selected = false;
+      var row2Selected = false;
+      var row3Selected = false;
+      var row4Selected = false;
+
+        $('#row_minotautro input').click(function() {
+          $('#row_minotautro input').removeClass('selected');
+          $(this).toggleClass('selected');
+          row0Selected=true;
+          if(row0Selected && row1Selected && row2Selected && row3Selected && row4Selected ){
+            pag2_mostra_botao_criar();
+          }
+          //alert("woo");
+        });
+
+        $('#row_espelho input').click(function() {
+          $('#row_espelho input').removeClass('selected');
+          $(this).toggleClass('selected');
+
+          row1Selected=true;
+          if(row0Selected && row1Selected && row2Selected && row3Selected && row4Selected ){
+            pag2_mostra_botao_criar();
+          }
+          //alert("woo");
+        });
+
+        $('#row_totens input').click(function() {
+          $('#row_totens input').removeClass('selected');
+          $(this).toggleClass('selected');
+
+          row2Selected=true;
+          if(row0Selected && row1Selected && row2Selected && row3Selected && row4Selected ){
+            pag2_mostra_botao_criar();
+          }
+          //alert("woo");
+        });
+
+        $('#row_jogo input').click(function() {
+          $('#row_jogo input').removeClass('selected');
+          $(this).toggleClass('selected');
+
+          row3Selected=true;
+          if(row0Selected && row1Selected && row2Selected && row3Selected && row4Selected ){
+            pag2_mostra_botao_criar();
+          }
+          //alert("woo");
+        });
+
+        $('#row_roda input').click(function() {
+          $('#row_roda input').removeClass('selected');
+          $(this).toggleClass('selected');
+
+          row4Selected=true;
+          if(row0Selected && row1Selected && row2Selected && row3Selected && row4Selected ){
+            pag2_mostra_botao_criar();
+          }
+          //alert("woo");
+        });
+
+      </script>
+      
+    </div>
+
+    <img id="pag2_botao_A_preto_tras" src="img/pag2_mostra_cores/laertron_pag2_botao_A_preto_tras.png" class="transparent">
+
+    <img id="pag2_botao_B_branco_frente" src="img/pag2_mostra_cores/laertron_pag2_botao_B_branco_frente.png" class="transparent">
+
+    <img id="pag2_botao_C_texto_criar" src="img/pag2_mostra_cores/laertron_pag2_botao_C_texto_criar.png" class="transparent">
+    
+    <button id="btnCriar" class=""></button>
+
+    <script type="text/javascript">
+
+ 
+       // $('bem-vindo').webkitRequestFullScreen();
+
+
+          
+    </script>
+    </script>
+
+  </div>
+
+  <div id"aTira" class="page-div">
+    
+    <img id="pag3_fundo" src="img/pag3_tira/pag3_fundo.png" class="transparent">
+    <img id="pag3_titulo" src="img/pag3_tira/pag3_titulo.png" class="transparent">
+    <img id="pag3_compartilhe" src="img/pag3_tira/pag3_compartilhe.png" class="transparent">
+    
+    <img id="pag3_fb" src="img/pag3_tira/pag3_fb.png" class="transparent ">
+    <button id="btnFb" class=""></button>
+
+    <button id="btnRestart" class=""></button>
+
+    <canvas id="stripCanvas" width="3504" height="1040"></canvas>
+
+
+    <img id="pag3_error" src="img/pag3_tira/pag3_error.png" class="transparent">
+    <img id="pag3_timeout_error" src="img/pag3_tira/pag3_error_timeout.png" class="transparent">
+    <img id="pag3_success" src="img/pag3_tira/pag3_success.png" class="transparent">
+
+
+    <script type="text/javascript">
+
+     $( "#btnFb" )
+          .click(function( event ) {
+
+          $('#btnFb').attr('disabled', 'disabled');
+
+          $('#pag3_titulo').addClass('bkg-fadeout');
+          $('#pag3_compartilhe').addClass('bkg-fadeout');
+          $('#pag3_fb').removeClass("bkg-fadein");
+          $('#pag3_fb').addClass('pisca-rapido');
+
+          FB.login(function(response) {
+
+          FB.api("/me/permissions", function(response){ 
+            var data_length = response.data && response.data.length ? response.data.length : 0;
+            var permissions = data_length > 0 ? response.data[0] : {};
+
+            if (permissions["publish_stream"]) {
+              //alert("PermissÃ£o definida com sucesso!\nAgora vocÃª jÃ¡ pode fazer o upload da foto.");  
+              
+              postaNoFace(FB.getAccessToken(), "LAERTRON.png", "image/png", document.getElementById("stripCanvas"), "LAERTRON ATIVADO!!", fb_post_callback);
+
+              upload_timeout_func = setTimeout(show_timeout_error, 60000)
+
+            } else {
+              
+              $('#pag3_fb').removeClass('pisca-rapido');
+              $('#pag3_fb').addClass('transparent');
+
+              $('#pag3_error').addClass('pisca-rapido');
+              $('#pag3_error').removeClass('transparent');
+
+              $('#btnRestart').removeAttr('disabled');
+              $('#btnRestart').css('z-index',12);
+
+              FB.logout();
+
+            }
+          });
+
+          //refazer click
+          //alert("novo login!");
+          //$("#btn_save").click();
+        }, {scope: 'photo_upload, publish_stream'});
+            
+          });
+
+    </script>
+    
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,392 @@
+html, body {
+  height: 100%
+}
+
+#stripCanvas
+{
+  position: absolute;
+  top: 310px;
+  left: 27px;
+  width: 1225px;
+  height: 370px;
+  z-index: 10000;
+  display: block;
+}
+
+.modal img {
+  margin-right: auto;
+  margin-left: auto;
+  width:100%;
+}
+
+.page-div {
+  position:relative;
+  height:1280px;
+  width:1024px;
+  margin:33px auto;
+}
+
+.page-div img {
+  position:absolute;
+  left:0;
+}
+
+/*   PAGINA 1     */
+
+#bem-vindo #btnEntra {
+  width:350px;
+  height:132px;
+  position:absolute;
+  top: 580px;
+  left: 806px;
+
+  z-index: 1000;
+
+  background: transparent;
+  border: none !important;
+  font-size:0;
+}
+
+/*   PAGINA 2     */
+
+#mostraCores #seletor-cores {
+  /*
+  width:1280px;
+  height:1024px;
+  position:absolute;
+  top: 0px;
+  left: 0px;
+  */
+  
+  width:725px;
+  height:700px;
+  position:absolute;
+  top: 173px;
+  left: 511px;
+  
+  z-index: 1000;
+
+  background: transparent;
+  //background-color:rgba(255,0,0,0.5);
+  border: none !important;
+  font-size:0;
+}
+
+#mostraCores #seletor-cores #row_minotautro {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+#mostraCores #seletor-cores #row_espelho {
+	position: absolute;
+	top: 136px;
+	left: 0px;
+}
+
+#mostraCores #seletor-cores #row_totens {
+	position: absolute;
+	top: 278px;
+	left: 0px;
+}
+
+#mostraCores #seletor-cores #row_jogo {
+	position: absolute;
+	top: 420px;
+	left: 0px;
+}
+
+#mostraCores #seletor-cores #row_roda {
+	position: absolute;
+	top: 562px;
+	left: 0px;
+}
+
+#mostraCores #seletor-cores input {
+
+  position:absolute;
+  margin-right: 24px;
+
+  color: transparent;
+
+  z-index: 1000;
+
+  border: 0px solid red;
+  background: transparent;
+  font-size:0;
+}
+
+#mostraCores #btnCriar {
+  width:312px;
+  height:90px;
+  position:absolute;
+  top: 896px;
+  left: 905px;
+
+  z-index: 1000;
+
+  background: transparent;
+  border: none !important;
+  font-size:0;
+}
+
+#mostraCores #seletor-cores input.btnRosa {
+  width:120px;
+  height:118px;
+  
+  left:0px;
+}
+#mostraCores #seletor-cores input.btnVerde {
+  width:120px;
+  height:118px;
+  
+  left:144px;
+}
+#mostraCores #seletor-cores input.btnAmarelo {
+  width:120px;
+  height:118px;
+  
+  left:282px;
+}
+#mostraCores #seletor-cores input.btnVermelho {
+  width:120px;
+  height:118px;
+  
+  left:425px;
+}
+#mostraCores #seletor-cores input.btnAzul {
+  width:120px;
+  height:118px;
+  
+  left:566px;
+}
+
+#mostraCores #seletor-cores input.selected {
+	border: 6px solid red;
+}
+/*
+input.selected {
+	border: 6px solid red;
+}
+*/
+#aTira #pag3_fundo {
+	z-index: -1;
+}
+
+#btnFb {
+
+
+	background: red;
+	border: none !important;
+	font-size:0;
+
+	background: transparent;
+
+	z-index: 10;
+	width: 100px;
+	height: 100px;
+	top: 892px;
+	left: 1138px;
+	position: absolute;
+
+}
+
+#btnRestart {
+
+
+	background: red;
+	border: none !important;
+	font-size:0;
+
+	background: transparent;
+
+	z-index: 9;
+	width: 100px;
+	height: 100px;
+	top: 892px;
+	left: 1138px;
+	position: absolute;
+
+}
+
+#pag3_success {
+	position: absolute;
+	top: 892px;
+	left: 1138px;
+	width: 100px;
+	height: 100px;
+}
+#pag3_error {
+	position: absolute;
+	top: 892px;
+	left: 1138px;
+	width: 100px;
+	height: 100px;	
+	}
+#pag3_error_timeout {
+	position: absolute;
+	top: 892px;
+	left: 1138px;
+	width: 100px;
+	height: 100px;
+}
+
+@-webkit-keyframes FadeIn00 {
+   0% {
+     opacity:0;
+   }
+   25% {
+     opacity:0;
+   }
+   75% {
+   opacity:1;
+   }
+  100% {
+   opacity:1;
+ }
+}
+
+@-webkit-keyframes FadeIn01 {
+   0% {
+     opacity:0;
+   }
+  100% {
+   opacity:1;
+ }
+}
+
+@-webkit-keyframes EnterLeft {
+   0% {
+     left:0px;
+     
+   }
+  100% {
+    left:750px;
+   
+ }
+}
+
+@-webkit-keyframes EnterRight {
+   0% {
+     right:750px;
+     
+   }
+  100% {
+    right:0px;
+   
+ }
+}
+
+@-webkit-keyframes EnterBottom {
+   0% {
+    bottom:-150px;
+    
+   }
+   100% {
+    bottom:250px;
+    
+  }
+}
+
+@-webkit-keyframes EnterTop {
+   0% {
+    top:-150px;
+    
+   }
+   100% {
+    top:0px;  
+  }
+}
+
+@-webkit-keyframes ExitTop {
+   0% {
+    height:1280px;
+    
+   }
+
+   100% {
+    height:0px;
+    
+  }
+}
+
+.transparent {
+	opacity: 0;
+}
+
+.pisca-rapido {
+  -webkit-animation-name: FadeIn01;
+  -webkit-animation-timing-function: cubic-bezier(0,0,0.33,1);
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 500ms;
+  -webkit-animation-direction: alternate;
+}
+
+.bkg-fadein {
+	opacity: 1;
+  -webkit-animation-name: FadeIn00;
+  -webkit-animation-timing-function: cubic-bezier(1,0.5,1,1);
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: 200ms;
+  -webkit-animation-direction: forward;
+}
+
+.bkg-fadeout {
+	opacity: 0;
+  -webkit-animation-name: FadeIn00;
+  -webkit-animation-timing-function: cubic-bezier(1,0.5,1,1);
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: 200ms;
+  -webkit-animation-direction: reverse;
+}
+
+.title-fadein {
+  -webkit-animation-name: FadeIn01;
+  -webkit-animation-timing-function: cubic-bezier(0.33,0,0.33,1);
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: 1500ms;
+  -webkit-animation-direction: forward;
+}
+
+.enter-left {
+  -webkit-animation-name: EnterLeft;
+  -webkit-animation-timing-function: cubic-bezier(0.92,0,1,1);
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-direction: reverse;
+}
+
+.enter-right {
+  -webkit-animation-name: EnterRight;
+  -webkit-animation-timing-function: cubic-bezier(0.92,0,1,1);
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-direction: reverse;
+}
+
+
+.enter-bottom {
+  -webkit-animation-name: EnterBottom;
+  -webkit-animation-timing-function: cubic-bezier(0,0,0.33,1);
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-direction: forward;
+}
+
+.enter-top {
+  -webkit-animation-name: EnterTop;
+  -webkit-animation-timing-function: cubic-bezier(0,0,0.33,1);
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-direction: forward;
+}
+
+.exit-top {
+   height:0px;
+  -webkit-animation-name: ExitTop;
+  -webkit-animation-timing-function: cubic-bezier(0,0,0.33,1);
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-direction: forward;
+}
+
