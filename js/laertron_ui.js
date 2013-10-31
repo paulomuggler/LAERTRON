@@ -157,6 +157,8 @@ function pag2Transitions(){
 
 function pag3Transitions(){
 
+	$('#btnFb').attr('disabled', 'disabled');
+	$('#btnRestart').attr('disabled', 'disabled');
 	$('#pag3_fundo').removeClass("transparent");
 	mostra_nova_tira();
 	sorteio_animado();
@@ -175,6 +177,11 @@ function pag3Transitions(){
 	setTimeout(function(){
 		$('#pag3_fb').addClass("bkg-fadein");
 		$('#pag3_fb').removeClass("transparent");
+		$('#btnFb').removeAttr('disabled');
 	}, 6000);
+
+	$( "#btnRestart" ).click(function() {
+	  location.reload();
+	}); 
 
 }

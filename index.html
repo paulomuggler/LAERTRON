@@ -17,7 +17,7 @@
   <div id="fb-root"></div>
   <script type="text/javascript" src="js/fb-init.js"></script>
 
-  <div id="bem-vindo" class="page-div" style="display:none;">
+  <div id="bem-vindo" class="page-div">
 
 <!--
     <img id="pag1_fundo_A_rosa" src="img/pag1_bemvindo/laertron_pag1_fundo_A_rosa.png" class="transparent" style="-webkit-blend-mode: multiply">
@@ -51,7 +51,7 @@
 
   </div>
 
-  <div id="mostraCores" class="page-div" style="display:none;">
+  <div id="mostraCores" class="page-div" >
 
     
     <img id="pag2_fundo_todo" src="img/pag2_mostra_cores/laertron_pag2_fundo_todo.png" class="transparent">
@@ -69,8 +69,8 @@
     <div id="seletor-cores">
 
       <div id="row_minotautro" class="seletor-cores-linha">
-        <input type="button" id="mino-btnRosa" class="btnRosa selected"></input>
-        <input type="button" class="btnVerde"></input>
+        <input type="button" id="mino-btnRosa" class="btnRosa "></input>
+        <input type="button"  id="mino-btnVerde" class="btnVerde"></input>
         <input type="button"  id="mino-btnAmarelo" class="btnAmarelo"></input>
         <input type="button"  id="mino-btnVermelho" class="btnVermelho"></input>
         <input type="button"  id="mino-btnAzul" class="btnAzul"></input>
@@ -78,7 +78,7 @@
 
       <div id="row_espelho" class="seletor-cores-linha">
         <input type="button"  id="espe-btnRosa" class="btnRosa "></input>
-        <input type="button"  id="espe-btnVerde" class="btnVerde selected"></input>
+        <input type="button"  id="espe-btnVerde" class="btnVerde "></input>
         <input type="button"  id="espe-btnAmarelo" class="btnAmarelo"></input>
         <input type="button"  id="espe-btnVermelho" class="btnVermelho"></input>
         <input type="button"  id="espe-btnAzul" class="btnAzul"></input>
@@ -87,7 +87,7 @@
       <div id="row_totens" class="seletor-cores-linha">
         <input type="button"  id="totens-btnRosa" class="btnRosa "></input>
         <input type="button"  id="totens-btnVerde" class="btnVerde"></input>
-        <input type="button"  id="totens-btnAmarelo" class="btnAmarelo selected"></input>
+        <input type="button"  id="totens-btnAmarelo" class="btnAmarelo "></input>
         <input type="button"  id="totens-btnVermelho" class="btnVermelho"></input>
         <input type="button"  id="totens-btnAzul" class="btnAzul"></input>
       </div>
@@ -96,7 +96,7 @@
         <input type="button"  id="jogo-btnRosa" class="btnRosa "></input>
         <input type="button"  id="jogo-btnVerde" class="btnVerde"></input>
         <input type="button"  id="jogo-btnAmarelo" class="btnAmarelo "></input>
-        <input type="button"  id="jogo-btnVermelho" class="btnVermelho selected"></input>
+        <input type="button"  id="jogo-btnVermelho" class="btnVermelho "></input>
         <input type="button"  id="jogo-btnAzul" class="btnAzul"></input>
       </div>
 
@@ -105,7 +105,7 @@
         <input type="button"  id="roda-btnVerde" class="btnVerde"></input>
         <input type="button"  id="roda-btnAmarelo" class="btnAmarelo"></input>
         <input type="button"  id="roda-btnVermelho" class="btnVermelho"></input>
-        <input type="button"  id="roda-btnAzul" class="btnAzul selected"></input>
+        <input type="button"  id="roda-btnAzul" class="btnAzul "></input>
       </div>
 
 
@@ -152,7 +152,7 @@
 
     <img id="pag2_botao_C_texto_criar" src="img/pag2_mostra_cores/laertron_pag2_botao_C_texto_criar.png" class="transparent">
     
-    <button id="btnCriar" class=""></input>
+    <button id="btnCriar" class=""></button>
 
     <script type="text/javascript">
 
@@ -171,169 +171,72 @@
     <img id="pag3_fundo" src="img/pag3_tira/pag3_fundo.png" class="transparent">
     <img id="pag3_titulo" src="img/pag3_tira/pag3_titulo.png" class="transparent">
     <img id="pag3_compartilhe" src="img/pag3_tira/pag3_compartilhe.png" class="transparent">
-    <img id="pag3_fb" src="img/pag3_tira/pag3_fb.png" class="transparent">
+    
+    <img id="pag3_fb" src="img/pag3_tira/pag3_fb.png" class="transparent ">
+    <button id="btnFb" class=""></button>
+
+    <button id="btnRestart" class=""></button>
 
     <canvas id="stripCanvas" width="3504" height="1040"></canvas>
+
+
+    <img id="pag3_error" src="img/pag3_tira/pag3_error.png" class="transparent">
+    <img id="pag3_timeout_error" src="img/pag3_tira/pag3_error_timeout.png" class="transparent">
+    <img id="pag3_success" src="img/pag3_tira/pag3_success.png" class="transparent">
+
+
+    <script type="text/javascript">
+
+     $( "#btnFb" )
+          .click(function( event ) {
+
+          $('#btnFb').attr('disabled', 'disabled');
+
+          $('#pag3_titulo').addClass('bkg-fadeout');
+          $('#pag3_compartilhe').addClass('bkg-fadeout');
+          $('#pag3_fb').removeClass("bkg-fadein");
+          $('#pag3_fb').addClass('pisca-rapido');
+
+          FB.login(function(response) {
+
+          FB.api("/me/permissions", function(response){ 
+            var data_length = response.data && response.data.length ? response.data.length : 0;
+            var permissions = data_length > 0 ? response.data[0] : {};
+
+            if (permissions["publish_stream"]) {
+              //alert("PermissÃ£o definida com sucesso!\nAgora vocÃª jÃ¡ pode fazer o upload da foto.");  
+              
+              postaNoFace(FB.getAccessToken(), "LAERTRON.png", "image/png", document.getElementById("stripCanvas"), "LAERTRON ATIVADO!!", fb_post_callback);
+
+              upload_timeout_func = setTimeout(show_timeout_error, 60000)
+
+            } else {
+              
+              $('#pag3_fb').removeClass('pisca-rapido');
+              $('#pag3_fb').addClass('transparent');
+
+              $('#pag3_error').addClass('pisca-rapido');
+              $('#pag3_error').removeClass('transparent');
+
+              $('#btnRestart').removeAttr('disabled');
+              $('#btnRestart').css('z-index',12);
+
+              FB.logout();
+
+            }
+          });
+
+          //refazer click
+          //alert("novo login!");
+          //$("#btn_save").click();
+        }, {scope: 'photo_upload, publish_stream'});
+            
+          });
+
+    </script>
     
 
   </div>
-
-<!--
-	<canvas id="stripCanvas" width="3504" height="1040"></canvas>
-  <script>$( "#stripCanvas" ).css( "display", "none" );</script>
-
-    <button id="btnGenerate">
-    	<img id="imgBtnGenerate" src="img/btn_arcade_raised.png" style="display:inline">
-    	<br>LAERTRON
-    </input>
-
-    <button id="btnFbShare">
-    	<img id="imgBtnFbShare" src="img/btn_fb_share.png" style="display:inline">
-    	<br>PUBLICAR NO FEICE
-	</input>
-
-	<button id="btnRestart">
-    	<img id="imgBtnRestart" src="img/btn_restart.png" style="display:inline">
-    	<br>PUBLICAR NO FEICE
-	</input>
-
-    <script>
-  		$(function() {
-  			$( "#btnGenerate" )
-      		.mousedown(function( event ) {
-	      		$( "#imgBtnGenerate" ).attr("src", "img/btn_arcade_pressed.png");
-	        	event.preventDefault();
-	        });
-
-    		$( "#btnGenerate" )
-      		.click(function( event ) {
-      			setTimeout( function (event) {
-      				generate();
-      				$("#stripCanvas" ).css( "display", "block" );
-      				}, 666 );
-	        	event.preventDefault();
-	        });
-
-	        $( "#btnGenerate" )
-      		.mouseup(function( event ) {
-      			setTimeout( function (event) {
-      				$( "#imgBtnGenerate" ).attr("src", "img/btn_arcade_raised.png");
-      				}, 333 );
-	        	event.preventDefault();
-	        });
-	        $( "#btnGenerate" )
-      		.mouseout(function( event ) {
-	      		$( "#imgBtnGenerate" ).attr("src", "img/btn_arcade_raised.png");
-	        	event.preventDefault();
-	        });
-
-	        $( "#btnFbShare" )
-      		.click(function( event ) {
-	      		  FB.login(function(response) {
-
-					FB.api("/me/permissions", function(response){ 
-						var data_length = response.data && response.data.length ? response.data.length : 0;
-						var permissions = data_length > 0 ? response.data[0] : {};
-
-						if (permissions["publish_stream"]) {
-							//alert("PermissÃ£o definida com sucesso!\nAgora vocÃª jÃ¡ pode fazer o upload da foto.");	
-							$('#modal_loading').modal('show')
-							postaNoFace(FB.getAccessToken(), "LAERTRON.png", "image/png", document.getElementById("stripCanvas"), "LAERTRON ATIVADO!!", fb_post_callback);
-							upload_timeout_func = setTimeout(show_error_dialog, 30000)
-						} else {
-							$('#modal_permissions_failed').modal('show')
-						}
-					});
-
-					//refazer click
-					//alert("novo login!");
-					//$("#btn_save").click();
-				}, {scope: 'photo_upload, publish_stream'});
-	        	event.preventDefault();
-	        });
-  });
-  </script>
--->
-<div id="modal_loading" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Aguarde...</h4>
-      </div>
-      <div class="modal-body">
-        <img src="img/uploading.gif">
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<div id="modal_upload_ok" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Parabéns! A sua tirinha exclusiva do laerte foi publicada com sucesso em seu mural!</h4>
-      </div>
-      <div class="modal-body">
-        <img src="img/upload_success.png">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</input>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<div id="modal_upload_failed" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Ocorreu um erro durante a publicação em seu mural. Por favor tente novamente. </h4>
-      </div>
-      <div class="modal-body">
-        <img src="img/upload_error.png">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</input>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<div id="modal_permissions_failed" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Você deve dar as permissões para o LAERTRON publicar em seu mural.</h4>
-      </div>
-      <div class="modal-body">
-        <img src="img/upload_error.png">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</input>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<!--
-<div id="modal_loading" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</input>
-        <h4 class="modal-title">Aguarde...</h4>
-      </div>
-      <div class="modal-body">
-        <img src="img/uploading.gif">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</input>
-        <button type="button" class="btn btn-primary">Save changes</input>
-      </div>
-    </div>
-  </div>
-</div>
--->
 
 </body>
 </html>

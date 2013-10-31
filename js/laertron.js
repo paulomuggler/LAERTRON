@@ -101,21 +101,45 @@ function sorteio_animado(){
 function fb_post_callback(response) {
 
   clearTimeout(upload_timeout_func);
+
+  res = JSON.parse(response.responseText);
 	
-	res = JSON.parse(response.responseText);
-	
-	$('#modal_loading').modal('hide')
+	//$('#modal_loading').modal('hide')
 
 	if (res.post_id) {
-	  $('#modal_upload_ok').modal('show')
+    $('#pag3_fb').addClass('transparent');
+    $('#pag3_fb').removeClass('pisca-rapido');
+
+    $('#pag3_esuccess').addClass('bkg-fadein');
+    $('#pag3_success').removeClass('transparent');
+    
+    $('#btnRestart').removeAttr('disabled');
+    $('#btnRestart').css('z-index',12);
+
   } else {
-  	$('#modal_upload_failed').modal('show')
+    $('#pag3_fb').addClass('transparent');
+    $('#pag3_fb').removeClass('pisca-rapido');
+
+    $('#pag3_error').addClass('pisca-rapido');
+    $('#pag3_error').removeClass('transparent');
+
+    $('#btnRestart').removeAttr('disabled');
+    $('#btnRestart').css('z-index',12);   
   }
   FB.logout();
 }
 
-function show_error_dialog(e){
-  $('#modal_upload_failed').modal('show');
-  //cancelar request ajax
+function show_timeout_error(e){
+  $('#pag3_fb').addClass('transparent');
+  $('#pag3_fb').removeClass('pisca-rapido');
+
+  $('#pag3_error').addClass('pisca-rapido');
+  $('#pag3_error').removeClass('transparent');
+
+  $('#btnRestart').removeAttr('disabled');
+  $('#btnRestart').css('z-index',12);
+  //cancelar request FB
+
+  FB.logout();
 }
 

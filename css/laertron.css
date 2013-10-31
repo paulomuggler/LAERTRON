@@ -172,6 +172,65 @@ input.selected {
 #aTira #pag3_fundo {
 	z-index: -1;
 }
+
+#btnFb {
+
+
+	background: red;
+	border: none !important;
+	font-size:0;
+
+	background: transparent;
+
+	z-index: 10;
+	width: 100px;
+	height: 100px;
+	top: 892px;
+	left: 1138px;
+	position: absolute;
+
+}
+
+#btnRestart {
+
+
+	background: red;
+	border: none !important;
+	font-size:0;
+
+	background: transparent;
+
+	z-index: 9;
+	width: 100px;
+	height: 100px;
+	top: 892px;
+	left: 1138px;
+	position: absolute;
+
+}
+
+#pag3_success {
+	position: absolute;
+	top: 892px;
+	left: 1138px;
+	width: 100px;
+	height: 100px;
+}
+#pag3_error {
+	position: absolute;
+	top: 892px;
+	left: 1138px;
+	width: 100px;
+	height: 100px;	
+	}
+#pag3_error_timeout {
+	position: absolute;
+	top: 892px;
+	left: 1138px;
+	width: 100px;
+	height: 100px;
+}
+
 @-webkit-keyframes FadeIn00 {
    0% {
      opacity:0;
@@ -264,11 +323,21 @@ input.selected {
 }
 
 .bkg-fadein {
+	opacity: 1;
   -webkit-animation-name: FadeIn00;
   -webkit-animation-timing-function: cubic-bezier(1,0.5,1,1);
   -webkit-animation-iteration-count: 1;
   -webkit-animation-duration: 200ms;
   -webkit-animation-direction: forward;
+}
+
+.bkg-fadeout {
+	opacity: 0;
+  -webkit-animation-name: FadeIn00;
+  -webkit-animation-timing-function: cubic-bezier(1,0.5,1,1);
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: 200ms;
+  -webkit-animation-direction: reverse;
 }
 
 .title-fadein {
