@@ -259,7 +259,7 @@ input.selected {
 
 @-webkit-keyframes EnterLeft {
    0% {
-     left:1000px;
+     left:-1280px;
      
    }
   100% {
@@ -270,29 +270,28 @@ input.selected {
 
 @-webkit-keyframes EnterRight {
    0% {
-     right:750px;
-     
+     left:1280px;     
    }
   100% {
-    right:0px;
+    left:0px;
    
  }
 }
 
 @-webkit-keyframes EnterBottom {
    0% {
-    bottom:-1000px;
+    top:1024px;
     
    }
    100% {
-    bottom:0px;
+    top:0px;
     
   }
 }
 
 @-webkit-keyframes EnterTop {
    0% {
-    top:-150px;
+    top:-1024px;
     
    }
    100% {
@@ -365,6 +364,15 @@ input.selected {
   -webkit-animation-duration: 0.5s;
   -webkit-animation-direction: forward;
 }
+
+.enter-right-slow {
+  -webkit-animation-name: EnterRight;
+  -webkit-animation-timing-function: cubic-bezier(0,0,0.33,1);
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: 750ms;
+  -webkit-animation-direction: forward;
+}
+
 
 
 .enter-bottom {

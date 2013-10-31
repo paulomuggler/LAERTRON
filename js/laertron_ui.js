@@ -25,11 +25,13 @@ function pag1Transitions(){
 
 
 	  setTimeout(function(){
-	    $('#pag1_botao_A_rosa_tras').addClass("enter-left");
-	    $('#pag1_botao_B_azul_frente').addClass("enter-bottom");
-	    $('#btnEntra').addClass("enter-bottom");
+	    $('#pag1_botao_A_rosa_tras').addClass("enter-right-slow");
+	    setTimeout(function(){
+	    	$('#pag1_botao_B_azul_frente').addClass("enter-bottom");
+	    	$('#pag1_botao_B_azul_frente').removeClass("transparent");
+	    },250);
+	    //$('#btnEntra').addClass("enter-bottom");
 	    $('#pag1_botao_A_rosa_tras').removeClass("transparent");
-	    $('#pag1_botao_B_azul_frente').removeClass("transparent");
 	  }, 2666);
 
 	  setTimeout(function(){
@@ -73,28 +75,28 @@ function pag2Transitions(){
 	    tS=1800;
 	    dT=225;
 	    setTimeout(function(){
-	    	$('#pag2_texto_minotauro').addClass('enter-left');
+	    	$('#pag2_texto_minotauro').addClass('enter-right');
 	    	$('#pag2_texto_minotauro').removeClass("transparent");
 	    }, tS+dT);
 
 	    setTimeout(function(){
-	    	$('#pag2_texto_espelho').addClass('enter-left');
+	    	$('#pag2_texto_espelho').addClass('enter-right');
 	    	$('#pag2_texto_espelho').removeClass("transparent");
 	    }, tS+2*dT);
 
 	    setTimeout(function(){
-	    	$('#pag2_texto_totens').addClass('enter-left');
+	    	$('#pag2_texto_totens').addClass('enter-right');
 	    	$('#pag2_texto_totens').removeClass("transparent");
 	    }, tS+3*dT);
 
 	    setTimeout(function(){
-	    	$('#pag2_texto_jogo').addClass('enter-left');
+	    	$('#pag2_texto_jogo').addClass('enter-right');
 	    	$('#pag2_texto_jogo').removeClass("transparent");
 	    }, tS+4*dT);
 
 
 	    setTimeout(function(){
-	    	$('#pag2_texto_roda').addClass('enter-left');
+	    	$('#pag2_texto_roda').addClass('enter-right');
 	    	$('#pag2_texto_roda').removeClass("transparent");
 	    }, tS+5*dT);
 
@@ -124,10 +126,12 @@ function pag2Transitions(){
 
 function pag2_mostra_botao_criar(){
 	setTimeout(function(){
-		$('#pag2_botao_A_preto_tras').addClass("enter-left");
-		$('#pag2_botao_B_branco_frente').addClass("enter-bottom");
-		$('#btnCriar').addClass("enter-bottom");
-		$('#pag2_botao_A_preto_tras').removeClass("transparent");
+		$('#pag2_botao_B_branco_frente').addClass("enter-left");
+		setTimeout(function(){
+			$('#pag2_botao_A_preto_tras').addClass("enter-left");
+			$('#pag2_botao_A_preto_tras').removeClass("transparent");
+		},250);
+
 		$('#pag2_botao_B_branco_frente').removeClass("transparent");
 	}, 100);
 
