@@ -108,39 +108,6 @@ function pag2Transitions(){
 	    	
 	    }, 4000);
 
-	    /*
-	    $('#pag1_fundo_A_rosa').addClass("bkg-fadein");
-	    $('#pag1_fundo_B_verde').addClass("bkg-fadein");
-	    $('#pag1_fundo_A_rosa').removeClass("transparent");
-	    $('#pag1_fundo_B_verde').removeClass("transparent");
-	    */
-/*
-	    setTimeout(function(){
-	      
-	      $('#pag2_titulo_B_rosa_frente').addClass("title-fadein");
-	      $('#pag2_titulo_A_azul_tras').addClass("title-fadein");
-	      $('#pag2_titulo_B_rosa_frente').removeClass("transparent");
-	      $('#pag2_titulo_A_azul_tras').removeClass("transparent");
-	      
-	    },1333);
-*/
-	    //alert("Hello")
-
-	    setTimeout(function(){
-	      $('#pag2_botao_A_preto_tras').addClass("enter-left");
-	      $('#pag2_botao_B_branco_frente').addClass("enter-bottom");
-	      $('#btnEntra').addClass("enter-bottom");
-	      $('#pag2_botao_A_preto_tras').removeClass("transparent");
-	      $('#pag2_botao_B_branco_frente').removeClass("transparent");
-	    }, 4000);
-
-	    setTimeout(function(){
-	      $('#pag2_botao_C_texto_criar').removeClass("transparent");
-	      $('#pag2_botao_C_texto_criar').addClass("pisca-rapido");
-	      $('#btnCriar').removeAttr('disabled');
-	      //alert("Hello")
-	      },6000);
-
 	  },333);
 
 
@@ -155,14 +122,31 @@ function pag2Transitions(){
 
 }
 
+function pag2_mostra_botao_criar(){
+	setTimeout(function(){
+		$('#pag2_botao_A_preto_tras').addClass("enter-left");
+		$('#pag2_botao_B_branco_frente').addClass("enter-bottom");
+		$('#btnEntra').addClass("enter-bottom");
+		$('#pag2_botao_A_preto_tras').removeClass("transparent");
+		$('#pag2_botao_B_branco_frente').removeClass("transparent");
+	}, 100);
+
+	setTimeout(function(){
+		$('#pag2_botao_C_texto_criar').removeClass("transparent");
+		$('#pag2_botao_C_texto_criar').addClass("pisca-rapido");
+		$('#btnCriar').removeAttr('disabled');
+		//alert("Hello")
+	},2100);
+}
+
 function pag3Transitions(){
 
 	$('#btnFb').attr('disabled', 'disabled');
 	$('#btnRestart').attr('disabled', 'disabled');
 	$('#pag3_fundo').removeClass("transparent");
 	mostra_nova_tira();
-	sorteio_animado();
-
+	setTimeout(function(){sorteio_animado();},1000);
+	
 	setTimeout(function(){
 		$('#pag3_titulo').addClass("enter-top");
 		$('#pag3_titulo').removeClass("transparent");

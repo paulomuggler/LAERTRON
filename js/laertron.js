@@ -112,9 +112,11 @@ function fb_post_callback(response) {
 
     $('#pag3_esuccess').addClass('bkg-fadein');
     $('#pag3_success').removeClass('transparent');
-    
+
     $('#btnRestart').removeAttr('disabled');
     $('#btnRestart').css('z-index',12);
+
+    FB.logout();
 
   } else {
     $('#pag3_fb').addClass('transparent');
@@ -124,7 +126,10 @@ function fb_post_callback(response) {
     $('#pag3_error').removeClass('transparent');
 
     $('#btnRestart').removeAttr('disabled');
-    $('#btnRestart').css('z-index',12);   
+    $('#btnRestart').css('z-index',12);
+
+    FB.logout();
+
   }
   FB.logout();
 }
