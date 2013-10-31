@@ -92,7 +92,7 @@ function sorteio_animado(){
     clearInterval(tqB);
     clearInterval(tqC);
     clearInterval(tqD);
-  }, 6000);
+  }, 3500);
 
 }
 

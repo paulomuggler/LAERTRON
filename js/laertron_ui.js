@@ -164,17 +164,17 @@ function pag3Transitions(){
 	setTimeout(function(){
 		$('#pag3_titulo').addClass("enter-top");
 		$('#pag3_titulo').removeClass("transparent");
-	}, 6500);
+	}, 4000);
 
 	setTimeout(function(){
 		$('#pag3_compartilhe').addClass("bkg-fadein");
 		$('#pag3_compartilhe').removeClass("transparent");
-	}, 7000);
+	}, 5000);
 	
 
 	setTimeout(function(){
 		$('#pag3_fb').addClass("bkg-fadein");
 		$('#pag3_fb').removeClass("transparent");
-	}, 7500);
+	}, 6000);
 
 }
