@@ -1,7 +1,11 @@
 html, body {
   height: 100%
+}
+
+body{
   overflow:hidden;
 }
+
 
 #stripCanvas
 {
@@ -26,6 +30,7 @@ html, body {
   height:1024px;
   margin:33px auto;
   overflow: hidden;
+  display: block;
 }
 
 .page-div img {
@@ -377,7 +382,7 @@ input.selected {
 
 .enter-bottom {
   -webkit-animation-name: EnterBottom;
-  -webkit-animation-timing-function: cubic-bezier(0,0,0.33,1);
+  -webkit-animation-timing-function: cubic-bezier(0,0,0.66,1);
   -webkit-animation-iteration-count: 1;
   -webkit-animation-duration: 0.5s;
   -webkit-animation-direction: forward;
@@ -399,4 +404,17 @@ input.selected {
   -webkit-animation-duration: 1.5s;
   -webkit-animation-direction: forward;
 }
+
+ .scale_down {
+ 	-webkit-transition: all 1000ms ease-out;
+    -webkit-transform:scale(1,0.5);
+  }
+
+ .rotate_popin {
+    opacity:1;
+    -webkit-transform-origin: 652px 151px;
+    -webkit-transition: all 6s linear;
+    -webkit-transform:rotate(360deg);
+    
+  }
 

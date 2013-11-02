@@ -16,8 +16,10 @@ function pag1Transitions(){
 
 	  setTimeout(function(){
 	    
-	    $('#pag1_titulo_B_rosa_frente').addClass("title-fadein");
-	    $('#pag1_titulo_A_azul_tras').addClass("title-fadein");
+	    $('#pag1_titulo_B_rosa_frente').addClass("scale_down");
+	    $('#pag1_titulo_A_azul_tras').addClass("scale_down");
+	    $('#pag1_titulo_B_rosa_frente').addClass("rotate_popin");
+	    $('#pag1_titulo_A_azul_tras').addClass("rotate_popin");
 	    $('#pag1_titulo_B_rosa_frente').removeClass("transparent");
 	    $('#pag1_titulo_A_azul_tras').removeClass("transparent");
 	   
@@ -52,6 +54,10 @@ function pag1Transitions(){
 	}, 500);
 	//alert("Hello");
 	});        
+
+}
+
+function pag1piscafundo(){
 
 }
 
@@ -107,11 +113,12 @@ function pag2Transitions(){
     		$('#mostraCores #seletor-cores input').removeAttr('disabled');;
     		$('#mostraCores #seletor-cores input').addClass('title-fadein');
 			$('#mostraCores #seletor-cores input').removeClass('transparent');
+
+			pag2_seletor_cores();
 	    	
 	    }, 4000);
 
 	  },333);
-
 
 	$( "#btnCriar" ).click(function() {
 	  $('#mostraCores').addClass("exit-top");
@@ -125,15 +132,14 @@ function pag2Transitions(){
 }
 
 function pag2_mostra_botao_criar(){
-	setTimeout(function(){
-		$('#pag2_botao_B_branco_frente').addClass("enter-left");
-		setTimeout(function(){
-			$('#pag2_botao_A_preto_tras').addClass("enter-left");
-			$('#pag2_botao_A_preto_tras').removeClass("transparent");
-		},250);
+		
+	$('#pag2_botao_B_branco_frente').addClass("enter-left");
+	$('#pag2_botao_B_branco_frente').removeClass("transparent");
 
-		$('#pag2_botao_B_branco_frente').removeClass("transparent");
-	}, 100);
+	setTimeout(function(){
+		$('#pag2_botao_A_preto_tras').addClass("enter-left");
+		$('#pag2_botao_A_preto_tras').removeClass("transparent");
+	},250);
 
 	setTimeout(function(){
 		$('#pag2_botao_C_texto_criar').removeClass("transparent");
@@ -141,6 +147,86 @@ function pag2_mostra_botao_criar(){
 		$('#btnCriar').removeAttr('disabled');
 		//alert("Hello")
 	},2100);
+}
+
+
+var row0Selected = false;
+var row1Selected = false;
+var row2Selected = false;
+var row3Selected = false;
+var row4Selected = false;
+
+function unsetSelVars(){
+row0Selected = false;
+row1Selected = false;
+row2Selected = false;
+row3Selected = false;
+row4Selected = false;
+}
+
+function pag2_seletor_cores(){
+
+	$('#mostraCores #seletor-cores').change(function(){pag2_mostra_botao_criar();});
+      
+        $('#row_minotautro input').click(function() {
+          $('#row_minotautro input').removeClass('selected');
+          $(this).toggleClass('selected');
+          row0Selected=true;
+          if(row0Selected && row1Selected && row2Selected && row3Selected && row4Selected ){
+            unsetSelVars();
+            $('#mostraCores #seletor-cores').trigger( "change" );
+            
+          }
+          //alert("woo");
+        });
+
+        $('#row_espelho input').click(function() {
+          $('#row_espelho input').removeClass('selected');
+          $(this).toggleClass('selected');
+
+          row1Selected=true;
+          if(row0Selected && row1Selected && row2Selected && row3Selected && row4Selected ){
+            unsetSelVars();
+            $('#mostraCores #seletor-cores').trigger( "change" );
+          }
+          //alert("woo");
+        });
+
+        $('#row_totens input').click(function() {
+          $('#row_totens input').removeClass('selected');
+          $(this).toggleClass('selected');
+
+          row2Selected=true;
+          if(row0Selected && row1Selected && row2Selected && row3Selected && row4Selected ){
+            unsetSelVars();
+            $('#mostraCores #seletor-cores').trigger( "change" );
+          }
+          //alert("woo");
+        });
+
+        $('#row_jogo input').click(function() {
+          $('#row_jogo input').removeClass('selected');
+          $(this).toggleClass('selected');
+
+          row3Selected=true;
+          if(row0Selected && row1Selected && row2Selected && row3Selected && row4Selected ){
+            unsetSelVars();
+            $('#mostraCores #seletor-cores').trigger( "change" );
+          }
+          //alert("woo");
+        });
+
+        $('#row_roda input').click(function() {
+          $('#row_roda input').removeClass('selected');
+          $(this).toggleClass('selected');
+
+          row4Selected=true;
+          if(row0Selected && row1Selected && row2Selected && row3Selected && row4Selected ){
+            unsetSelVars();
+            $('#mostraCores #seletor-cores').trigger( "change" );
+          }
+          //alert("woo");
+        });
 }
 
 function pag3Transitions(){

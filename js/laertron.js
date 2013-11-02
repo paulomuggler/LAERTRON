@@ -107,44 +107,52 @@ function fb_post_callback(response) {
 	//$('#modal_loading').modal('hide')
 
 	if (res.post_id) {
-    $('#pag3_fb').addClass('transparent');
-    $('#pag3_fb').removeClass('pisca-rapido');
-
-    $('#pag3_esuccess').addClass('bkg-fadein');
-    $('#pag3_success').removeClass('transparent');
-
-    $('#btnRestart').removeAttr('disabled');
-    $('#btnRestart').css('z-index',12);
-
-    FB.logout();
-
+    sucesso_fb();
   } else {
-    $('#pag3_fb').addClass('transparent');
-    $('#pag3_fb').removeClass('pisca-rapido');
-
-    $('#pag3_error').addClass('pisca-rapido');
-    $('#pag3_error').removeClass('transparent');
-
-    $('#btnRestart').removeAttr('disabled');
-    $('#btnRestart').css('z-index',12);
-
-    FB.logout();
-
+    erro_fb();
   }
   FB.logout();
 }
 
-function show_timeout_error(e){
-  $('#pag3_fb').addClass('transparent');
+function erro_fb(){
   $('#pag3_fb').removeClass('pisca-rapido');
+  $('#pag3_fb').addClass('transparent');
 
   $('#pag3_error').addClass('pisca-rapido');
   $('#pag3_error').removeClass('transparent');
 
-  $('#btnRestart').removeAttr('disabled');
-  $('#btnRestart').css('z-index',12);
-  //cancelar request FB
+  setTimeout(function(){
+    $('#pag3_error').removeClass('pisca-rapido');
+    $('#pag3_error').addClass('transparent');
+
+    $('#pag3_fb').addClass('bkg-fadein');
+    $('#pag3_fb').removeClass('transparent');
+
+    $('#btnFb').removeAttr('disabled');
+    $('#btnFb').css('z-index',12);
+    $('#btnRestart').css('z-index',10);
+  },1333);
 
   FB.logout();
+}
+
+function sucesso_fb(){
+  $('#pag3_fb').addClass('transparent');
+  $('#pag3_fb').removeClass('pisca-rapido');
+
+  $('#pag3_esuccess').addClass('bkg-fadein');
+  $('#pag3_success').removeClass('transparent');
+
+  $('#btnRestart').removeAttr('disabled');
+  $('#btnRestart').css('z-index',12);
+  $('#btnFb').css('z-index',10);
+
+  FB.logout();
+
+  setTimeout(function(){location.reload();},6666);
+}
+
+function timeout_error(e){
+  erro_fb();
 }
 
