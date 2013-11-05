@@ -74,28 +74,31 @@ function sorteio_animado(){
   if(!initi) init();
   mostra_nova_tira();
 
-  tqA = setInterval(function(){
-    gera_quadro(qA, 'A');
-  },123);
-
-  tqB = setInterval(function(){
-    gera_quadro(qB, 'B');
-  },78);
-
-  tqC = setInterval(function(){
-    gera_quadro(qC, 'C');
-  },147);
-
-  tqD = setInterval(function(){
-    gera_quadro(qD, 'D');
-  },97);
-
   setTimeout(function(){
-    clearInterval(tqA);
-    clearInterval(tqB);
-    clearInterval(tqC);
-    clearInterval(tqD);
-  }, 7500);
+
+    tqA = setInterval(function(){
+      gera_quadro(qA, 'A');
+    },123);
+
+    tqB = setInterval(function(){
+      gera_quadro(qB, 'B');
+    },78);
+
+    tqC = setInterval(function(){
+      gera_quadro(qC, 'C');
+    },147);
+
+    tqD = setInterval(function(){
+      gera_quadro(qD, 'D');
+    },97);
+
+    setTimeout(function(){
+      clearInterval(tqA);
+      clearInterval(tqB);
+      clearInterval(tqC);
+      clearInterval(tqD);
+    }, 7500);
+  },1000);
 
 }
 

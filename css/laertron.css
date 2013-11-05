@@ -3,7 +3,7 @@ html, body {
 }
 
 body{
-  //overflow:hidden;
+  overflow:hidden;
   background-color: black;
 }
 
@@ -28,14 +28,14 @@ body{
   position:relative;
   width:1280px;
   height:1024px;
-  margin: 40px auto;
+  margin: 150px auto;
   overflow: hidden;
   display: block;
 }
 
 .page-div img {
   position:absolute;
-  left:0;
+  left:0px;
 }
 
 /*   PAGINA 1     */
@@ -350,17 +350,17 @@ input.selected {
 
 @-webkit-keyframes ExitTop {
    0% {
-    height:100%;
-    
+    top:0px;
+    height: 1024px;
    }
 
    100% {
-    height:0%;
-    
+    top:-1024px;
+    height: 0px;
   }
 }
 
-@-webkit-keyframes OpenHeight {
+@-webkit-keyframes ScaleIn {
    0% {
     opacity: 0; -webkit-transform: scale(0,0);
    }
@@ -433,10 +433,11 @@ input.selected {
 }
 
 .enter-bottom {
+	//top:0px;
   -webkit-animation-name: EnterBottom;
   -webkit-animation-timing-function: cubic-bezier(0,0,0.66,1);
   -webkit-animation-iteration-count: 1;
-  -webkit-animation-duration: 0.5s;
+  -webkit-animation-duration: 750ms;
   -webkit-animation-direction: forward;
 }
 
@@ -450,15 +451,16 @@ input.selected {
 
 .exit-top {
    height:0px;
+   top:-1024px;
   -webkit-animation-name: ExitTop;
-  -webkit-animation-timing-function: cubic-bezier(0,0,0.33,1);
+  -webkit-animation-timing-function: cubic-bezier(.25,.12,.2,.9);
   -webkit-animation-iteration-count: 1;
-  -webkit-animation-duration: 1.5s;
+  -webkit-animation-duration: 750ms;
   -webkit-animation-direction: forward;
 }
 
-.open_height {
-  -webkit-animation-name: OpenHeight;
+.scale_in {
+  -webkit-animation-name: ScaleIn;
   -webkit-animation-timing-function: cubic-bezier(.25,.12,.2,.9);
   -webkit-animation-iteration-count: 1;
   -webkit-animation-duration: 600ms;

@@ -4,7 +4,8 @@ function pag1Transitions(){
 
 	setTimeout(function(){
 
-		$('#bem-vindo').addClass('open_height');
+		//$('#bem-vindo').addClass('scale_in');
+		$('#bem-vindo').addClass('enter-bottom');
 		
 		$('#pag1_fundo_B_verde').addClass("bkg-fadein");
 		$('#pag1_fundo_B_verde').removeClass("transparent");
@@ -59,11 +60,7 @@ function pag1Transitions(){
 
 	$( "#btnEntra" ).click(function() {
 		$('#bem-vindo').addClass("exit-top");
-		setTimeout(function(){
-			$('#bem-vindo').addClass("transparent");
-			pag2Transitions(); 
-		}, 500);
-		//alert("Hello");
+		pag2Transitions(); 
 	});        
 
 }
@@ -75,10 +72,11 @@ function pag2Transitions(){
 	$('#mostraCores #seletor-cores input').attr('disabled', 'disabled');
 	$('#mostraCores #seletor-cores input').addClass('transparent');
 
+	$('#pag2_fundo_A').addClass("enter-bottom");
+	$('#pag2_fundo_A').removeClass("transparent");
 	setTimeout(function(){
 
-		$('#pag2_fundo_A').addClass("bkg-fadein");
-		$('#pag2_fundo_A').removeClass("transparent");
+		//$('#pag2_fundo_A').addClass("bkg-fadein");
 
 		setTimeout(function(){
 			
@@ -153,11 +151,7 @@ function pag2Transitions(){
 
 	$( "#btnCriar" ).click(function() {
 		$('#mostraCores').addClass("exit-top");
-		setTimeout(function(){
-		 $('#mostraCores').addClass("transparent");
-		 pag3Transitions();
-		}, 500);
-		//alert("Hello");
+		pag3Transitions();
 	});        
 
 }
@@ -265,9 +259,11 @@ function pag3Transitions(){
 	$('#btnFb').attr('disabled', 'disabled');
 	$('#btnRestart').attr('disabled', 'disabled');
 
+	$('#pag3_fundo').addClass("enter-bottom");
+	$('#pag3_fundo').removeClass("transparent");
+
 	setTimeout(function(){
 
-		$('#pag3_fundo').removeClass("transparent");
 		//mostra_nova_tira();
 
 		setTimeout(function(){
@@ -289,10 +285,10 @@ function pag3Transitions(){
 						$('#pag3_fb').addClass("bkg-fadein");
 						$('#pag3_fb').removeClass("transparent");
 						$('#btnFb').removeAttr('disabled');
-					}, 1200);
+					}, 800);
 				}, 1500);
 			},8500);
-		},1500);
+		},1000);
 	},100);
 
 	$( "#btnRestart" ).click(function() {
