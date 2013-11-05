@@ -3,7 +3,7 @@ html, body {
 }
 
 body{
-  overflow:hidden;
+  //overflow:hidden;
   background-color: black;
 }
 
@@ -28,7 +28,7 @@ body{
   position:relative;
   width:1280px;
   height:1024px;
-  margin: 90px auto;
+  margin: 40px auto;
   overflow: hidden;
   display: block;
 }
@@ -87,14 +87,24 @@ body{
 
 /*   PAGINA 2     */
 
+#mostraCores #pag2_fundo_A {
+	blend-mode: multiply;
+	z-index: -1000
+}
+
+#mostraCores #pag2_fundo_B_verde {
+	z-index: -999
+}
+
+#mostraCores #pag2_fundo_C_azul {
+	z-index: -998
+}
+
+#mostraCores #pag2_fundo_D_overlay {
+	z-index: -997
+}
+
 #mostraCores #seletor-cores {
-  /*
-  width:1280px;
-  height:1024px;
-  position:absolute;
-  top: 0px;
-  left: 0px;
-  */
   
   width:725px;
   height:700px;
@@ -391,7 +401,7 @@ input.selected {
 }
 
 .title-fadein {
-  -webkit-animation-name: FadeIn01;
+  -webkit-animation-name: FadeIn00;
   -webkit-animation-timing-function: cubic-bezier(0.33,0,0.33,1);
   -webkit-animation-iteration-count: 1;
   -webkit-animation-duration: 1500ms;

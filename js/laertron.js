@@ -71,6 +71,9 @@ function mostra_nova_tira(){
 
 function sorteio_animado(){
 
+  if(!initi) init();
+  mostra_nova_tira();
+
   tqA = setInterval(function(){
     gera_quadro(qA, 'A');
   },123);
@@ -92,7 +95,7 @@ function sorteio_animado(){
     clearInterval(tqB);
     clearInterval(tqC);
     clearInterval(tqD);
-  }, 3500);
+  }, 7500);
 
 }
 
@@ -149,7 +152,7 @@ function sucesso_fb(){
 
   FB.logout();
 
-  setTimeout(function(){location.reload();},6666);
+  setTimeout(function(){location.reload();},6666);    
 }
 
 function timeout_error(e){

@@ -68,10 +68,6 @@ function pag1Transitions(){
 
 }
 
-function pag1piscafundo(){
-
-}
-
 function pag2Transitions(){
 
 	$('#btnCriar').attr('disabled', 'disabled'); //Disable
@@ -81,55 +77,79 @@ function pag2Transitions(){
 
 	setTimeout(function(){
 
-			//$('#pag2_fundo_todo').addClass("bkg-fadein");
-			$('#pag2_fundo_todo').removeClass("transparent");
+		$('#pag2_fundo_A').addClass("bkg-fadein");
+		$('#pag2_fundo_A').removeClass("transparent");
+
+		setTimeout(function(){
+			
+			$('#pag2_fundo_A').addClass("transparent");
+			$('#pag2_fundo_C_azul').removeClass("transparent");
 
 			setTimeout(function(){
-				$('#pag2_texto_selecione').addClass('enter-top');
-				$('#pag2_texto_selecione').removeClass("transparent");
-			}, 900);
-
-			tS=1800;
-			dT=225;
-			setTimeout(function(){
-				$('#pag2_texto_minotauro').addClass('enter-right');
-				$('#pag2_texto_minotauro').removeClass("transparent");
-			}, tS+dT);
-
-			setTimeout(function(){
-				$('#pag2_texto_espelho').addClass('enter-right');
-				$('#pag2_texto_espelho').removeClass("transparent");
-			}, tS+2*dT);
-
-			setTimeout(function(){
-				$('#pag2_texto_totens').addClass('enter-right');
-				$('#pag2_texto_totens').removeClass("transparent");
-			}, tS+3*dT);
-
-			setTimeout(function(){
-				$('#pag2_texto_jogo').addClass('enter-right');
-				$('#pag2_texto_jogo').removeClass("transparent");
-			}, tS+4*dT);
-
-
-			setTimeout(function(){
-				$('#pag2_texto_roda').addClass('enter-right');
-				$('#pag2_texto_roda').removeClass("transparent");
-			}, tS+5*dT);
-
-			setTimeout(function(){
-				$('#pag2_botoes_cores').addClass("title-fadein");
-				$('#pag2_botoes_cores').removeClass("transparent");
 				
-				$('#mostraCores #seletor-cores input').removeAttr('disabled');;
-				$('#mostraCores #seletor-cores input').addClass('title-fadein');
-			$('#mostraCores #seletor-cores input').removeClass('transparent');
+				$('#pag2_fundo_C_azul').addClass("transparent");
+				$('#pag2_fundo_B_verde').removeClass("transparent");
 
-			pag2_seletor_cores();
-				
-			}, 4000);
+				setTimeout(function(){
+					$('#pag2_fundo_B_verde').addClass("transparent");
+					$('#pag2_fundo_C_azul').removeClass("transparent");
 
-		},333);
+					setTimeout(function(){
+						$('#pag2_fundo_C_azul').addClass("transparent");
+						$('#pag2_fundo_B_verde').removeClass("transparent");
+
+
+						setTimeout(function(){
+						
+							$('#pag2_fundo_D_overlay').addClass("bkg-fadein");
+							$('#pag2_fundo_D_overlay').removeClass("transparent");
+							//$('#pag2_fundo_B_verde').addClass("transparent");
+
+
+							setTimeout(function(){
+								$('#pag2_texto_selecione').addClass('enter-top');
+								$('#pag2_texto_selecione').removeClass("transparent");
+								
+								dT=250;		
+								setTimeout(function(){
+									$('#pag2_texto_minotauro').addClass('enter-right');
+									$('#pag2_texto_minotauro').removeClass("transparent");
+									setTimeout(function(){
+										$('#pag2_texto_espelho').addClass('enter-right');
+										$('#pag2_texto_espelho').removeClass("transparent");
+										setTimeout(function(){
+											$('#pag2_texto_totens').addClass('enter-right');
+											$('#pag2_texto_totens').removeClass("transparent");
+											setTimeout(function(){
+												$('#pag2_texto_jogo').addClass('enter-right');
+												$('#pag2_texto_jogo').removeClass("transparent");
+												setTimeout(function(){
+													$('#pag2_texto_roda').addClass('enter-right');
+													$('#pag2_texto_roda').removeClass("transparent");
+
+													setTimeout(function(){
+														$('#pag2_botoes_cores').addClass("title-fadein");
+														$('#pag2_botoes_cores').removeClass("transparent");
+														
+														pag2_seletor_cores();
+
+														$('#mostraCores #seletor-cores input').removeAttr('disabled');;
+														$('#mostraCores #seletor-cores input').addClass('title-fadein');
+														$('#mostraCores #seletor-cores input').removeClass('transparent');
+
+													},750);
+												},dT);
+											},dT);
+										}, dT);
+									}, dT);
+								},1000);
+							},125);
+						},1000);
+					},500);
+				},500);
+			},1500);
+		},1800);
+	},100);
 
 	$( "#btnCriar" ).click(function() {
 		$('#mostraCores').addClass("exit-top");
@@ -157,7 +177,7 @@ function pag2_mostra_botao_criar(){
 		$('#pag2_botao_C_texto_criar').addClass("pisca-rapido");
 		$('#btnCriar').removeAttr('disabled');
 		//alert("Hello")
-	},2100);
+	},1200);
 }
 
 
@@ -244,26 +264,36 @@ function pag3Transitions(){
 
 	$('#btnFb').attr('disabled', 'disabled');
 	$('#btnRestart').attr('disabled', 'disabled');
-	$('#pag3_fundo').removeClass("transparent");
-	mostra_nova_tira();
-	setTimeout(function(){sorteio_animado();},1000);
-	
-	setTimeout(function(){
-		$('#pag3_titulo').addClass("enter-top");
-		$('#pag3_titulo').removeClass("transparent");
-	}, 4000);
 
 	setTimeout(function(){
-		$('#pag3_compartilhe').addClass("bkg-fadein");
-		$('#pag3_compartilhe').removeClass("transparent");
-	}, 5000);
-	
 
-	setTimeout(function(){
-		$('#pag3_fb').addClass("bkg-fadein");
-		$('#pag3_fb').removeClass("transparent");
-		$('#btnFb').removeAttr('disabled');
-	}, 6000);
+		$('#pag3_fundo').removeClass("transparent");
+		//mostra_nova_tira();
+
+		setTimeout(function(){
+
+			sorteio_animado();
+		
+			setTimeout(function(){
+				$('#pag3_titulo').addClass("enter-top");
+				$('#pag3_titulo').removeClass("transparent");
+				
+				setTimeout(function(){
+					$('#pag3_compartilhe').addClass("bkg-fadein");
+					$('#pag3_compartilhe').removeClass("transparent");
+					
+					setTimeout(function(){
+						//$('#pag3_compartilhe').addClass("bkg-fadein");
+						//$('#pag3_compartilhe').removeClass("transparent");
+
+						$('#pag3_fb').addClass("bkg-fadein");
+						$('#pag3_fb').removeClass("transparent");
+						$('#btnFb').removeAttr('disabled');
+					}, 1200);
+				}, 1500);
+			},8500);
+		},1500);
+	},100);
 
 	$( "#btnRestart" ).click(function() {
 		location.reload();
