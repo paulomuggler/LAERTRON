@@ -1,0 +1,11 @@
+/*
+ * Copyright (c) 2013 Paulo Muggler Moreira <paulo@blab.art.br>
+ * 
+ * All rights reserved. No warranty, explicit or implicit, provided.
+ */
+
+/*
+ * Copyright (c) 2013 Paulo Muggler Moreira <paulo@blab.art.br>
+ * 
+ * Todos os direitos reservados. O uso deste software não implica em nenhuma garantia, explícita ou implícita.
+ */
