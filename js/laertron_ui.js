@@ -48,11 +48,11 @@ function pag1Transitions(){
 									$('#btnEntra').removeAttr('disabled');
 									//alert("Hello")
 								},800);
-							},950);
-						},2400);
-					},800);
-				},800);
-			},800);
+							},80);
+						},2100);
+					},600);
+				},600);
+			},600);
 		},2800);
 	},100);
 	
@@ -140,7 +140,7 @@ function pag2Transitions(){
 											},dT);
 										}, dT);
 									}, dT);
-								},1000);
+								},1300);
 							},125);
 						},1000);
 					},500);
@@ -285,9 +285,9 @@ function pag3Transitions(){
 						$('#pag3_fb').addClass("bkg-fadein");
 						$('#pag3_fb').removeClass("transparent");
 						$('#btnFb').removeAttr('disabled');
-					}, 800);
-				}, 1500);
-			},8500);
+					}, 1000);
+				}, 2000);
+			},10000);
 		},1000);
 	},100);
 
