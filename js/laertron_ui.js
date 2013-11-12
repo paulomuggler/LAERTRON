@@ -296,3 +296,11 @@ function pag3Transitions(){
 	}); 
 
 }
+
+function disableTouchScrolling() {
+    document.ontouchmove = function(e){
+            e.preventDefault();
+    }
+}
+
+$
