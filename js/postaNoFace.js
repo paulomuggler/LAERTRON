@@ -6,6 +6,8 @@
 var laertron_fb_page_id = "396702830460199";
 
 var FB_FIQ_page_ID = '209163172429690';
+
+var FB_laerte_profile_id = '100001110302679';
      
 XMLHttpRequest.prototype.sendAsBinary = function(datastr) {
     function byteValue(x) {
@@ -50,12 +52,12 @@ function postImageToFacebook( authToken, filename, mimeType, imageData, message,
     formData += 'Content-Disposition: form-data; name="place"\r\n\r\n';
     formData += FB_FIQ_page_ID + '\r\n'
     formData += '--' + boundary + '--\r\n';
-
+/*
     formData += '--' + boundary + '\r\n';
     formData += 'Content-Disposition: form-data; name="tags"\r\n\r\n';
-    formData += '['+laertron_fb_page_id +']'+ '\r\n'
-    formData += '--' + boundary + '--\r\n';
-    
+    formData += '[{id:'+laertron_fb_page_id+'}, {id:'+FB_laerte_profile_id+'}]'+ '\r\n'
+    formData += '--' + boundary + '--\r\n'; 
+ */   
     var xhr = new XMLHttpRequest();
     xhr.open( 'POST', 'https://graph.facebook.com/me/photos?access_token=' + authToken, true );
     xhr.onload = xhr.onerror = function() {
@@ -64,6 +66,15 @@ function postImageToFacebook( authToken, filename, mimeType, imageData, message,
     };
     xhr.setRequestHeader( "Content-Type", "multipart/form-data; boundary=" + boundary );
     xhr.sendAsBinary( formData );
+
+    /*var xhr2 = new XMLHttpRequest();
+    xhr2.open( 'POST', 'https://graph.facebook.com/'+laertron_fb_page_id+'/photos?access_token=' + authToken, true );
+    xhr2.onload = xhr.onerror = function() {
+        if (callback) callback(xhr);
+        console.log( xhr.responseText );
+    };
+    xhr2.setRequestHeader( "Content-Type", "multipart/form-data; boundary=" + boundary );
+    xhr2.sendAsBinary( formData );*/
 };
 
 var Base64Binary = {
