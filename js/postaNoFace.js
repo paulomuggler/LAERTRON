@@ -3,7 +3,9 @@
 // sample
 // postaNoFace(FB.getAccessToken(), "meuteste.png", "image/png", document.getElementById("processing-canvas"), "teste");
 
+var laertron_fb_page_id = "396702830460199";
 
+var FB_FIQ_page_ID = '209163172429690';
      
 XMLHttpRequest.prototype.sendAsBinary = function(datastr) {
     function byteValue(x) {
@@ -11,7 +13,7 @@ XMLHttpRequest.prototype.sendAsBinary = function(datastr) {
     }
     var ords = Array.prototype.map.call(datastr, byteValue);
     var ui8a = new Uint8Array(ords);
-    this.send(ui8a.buffer);
+    this.send(ui8a);
 }
 
 
@@ -38,9 +40,20 @@ function postImageToFacebook( authToken, filename, mimeType, imageData, message,
         formData += String.fromCharCode( imageData[ i ] & 0xff );
     }
     formData += '\r\n';
+    
     formData += '--' + boundary + '\r\n';
     formData += 'Content-Disposition: form-data; name="message"\r\n\r\n';
     formData += message + '\r\n'
+    formData += '--' + boundary + '--\r\n';
+
+    formData += '--' + boundary + '\r\n';
+    formData += 'Content-Disposition: form-data; name="place"\r\n\r\n';
+    formData += FB_FIQ_page_ID + '\r\n'
+    formData += '--' + boundary + '--\r\n';
+
+    formData += '--' + boundary + '\r\n';
+    formData += 'Content-Disposition: form-data; name="tags"\r\n\r\n';
+    formData += '['+laertron_fb_page_id +']'+ '\r\n'
     formData += '--' + boundary + '--\r\n';
     
     var xhr = new XMLHttpRequest();

@@ -4,6 +4,7 @@ window.fbAsyncInit = function() {
 	      appId      : '542549515821319',                     // App ID from the app dashboard
 	      channelUrl : 'http://www.blab.art.br', 			  // Channel file for x-domain comms
 	      status     : false,                                 // Check Facebook Login status
+	      cookie     : false,								// enable cookies to allow the server to access the session
 	      xfbml      : false                                  // Look for social plugins on the page
 	    });
 

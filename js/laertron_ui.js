@@ -293,7 +293,9 @@ function pag3Transitions(){
 
 	$( "#btnRestart" ).click(function() {
 		location.reload();
-	}); 
+	});
+
+	setTimeout(function(){location.reload();},60*1000*5);
 
 }
 
