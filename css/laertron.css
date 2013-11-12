@@ -6,6 +6,7 @@ html, body {
 body{
   overflow:hidden;
   background-color: black;
+  background-image:url('/img/pag2_mostra_cores/pag2_fundo_A.png');
 }
 
 #stripCanvas
@@ -26,6 +27,11 @@ body{
   margin: auto;
   overflow: hidden;
   display: block;
+  border: none;
+}
+
+.border {
+  border: 3px solid black;
 }
 
 .page-div img {
