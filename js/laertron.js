@@ -117,7 +117,7 @@ function fb_post_callback(response) {
   } else {
     erro_fb();
   }
-  FB.logout();
+  //FB.getLoginStatus(handleSessionResponse);
 }
 
 function erro_fb(){
@@ -137,9 +137,12 @@ function erro_fb(){
     $('#btnFb').removeAttr('disabled');
     $('#btnFb').css('z-index',12);
     $('#btnRestart').css('z-index',10);
+
+    $('#pag3_compartilhe').addClass("bkg-fadein");
+    $('#pag3_compartilhe').removeClass("transparent");
   },1333);
 
-  FB.logout();
+  FB.getLoginStatus(handleSessionResponse);
 }
 
 function sucesso_fb(){
@@ -153,12 +156,26 @@ function sucesso_fb(){
   $('#btnRestart').css('z-index',12);
   $('#btnFb').css('z-index',10);
 
-  FB.logout();
+  FB.getLoginStatus(handleSessionResponse);
 
   setTimeout(function(){location.reload();},6666);    
 }
 
 function timeout_error(e){
   erro_fb();
+}
+ 
+function handleSessionResponse(response) {
+ 
+    //if we dont have a session (which means the user has been logged out, redirect the user)
+    if (!response.authResponse) {
+        alert("no FB logout required");
+        return;
+    }
+ 
+    //if we do have a non-null response.session, call FB.logout(),
+    //the JS method will log the user out of Facebook and remove any authorization cookies
+    alert("FB logout now");
+    FB.logout(response.authResponse);
 }
 
