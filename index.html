@@ -43,6 +43,7 @@
       $(window).load(function() {
         // $('bem-vindo').webkitRequestFullScreen();
         disableTouchScrolling();
+        FB.getLoginStatus(logoutSessionIfAuthenticated);
         pag1Transitions();
       });
 
@@ -172,21 +173,25 @@
 
           FB.login(function(response) {
 
+            //console.log(response);
+            var uid = response.authResponse.userID;
+            //console.log(uid);
+
           FB.api("/me/permissions", function(response){ 
             var data_length = response.data && response.data.length ? response.data.length : 0;
             var permissions = data_length > 0 ? response.data[0] : {};
 
             if (permissions["publish_stream"]) {
-              //alert("PermissÃ£o definida com sucesso!\nAgora vocÃª jÃ¡ pode fazer o upload da foto.");  
-              
+                            
               postaNoFace(FB.getAccessToken(), "LAERTRON.png", "image/png", document.getElementById("stripCanvas"), "LAERTRON ATIVADO!!", fb_post_callback);
 
-              upload_timeout_func = setTimeout(timeout_error, 60000)
+              upload_timeout_func = setTimeout(timeout_error, 60000);
 
             } else {
-              
               erro_fb();
-
+              setTimeout(function(){
+                $("#btnFb").click();
+              },1500);
             }
           });
 
@@ -334,4 +339,4 @@
   </div>
 
 </body>
-</html>
+</html>1

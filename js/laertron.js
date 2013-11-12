@@ -108,11 +108,23 @@ function fb_post_callback(response) {
 
   clearTimeout(upload_timeout_func);
 
+  console.log(response);
+
   res = JSON.parse(response.responseText);
 	
 	//$('#modal_loading').modal('hide')
 
 	if (res.post_id) {
+    /*
+    var body = 'Mais uma tirinha aleatória criada no LAERTRON:';
+    FB.api('/'+laertron_fb_page_id+'/feed', 'post', { message: body }, function(response) {
+      if (!response || response.error) {
+        alert('Error occured');
+      } else {
+        alert('Post ID: ' + response.id);
+      }
+    });
+    */
     sucesso_fb();
   } else {
     erro_fb();
@@ -121,6 +133,9 @@ function fb_post_callback(response) {
 }
 
 function erro_fb(){
+
+  FB.getLoginStatus(logoutSessionIfAuthenticated);
+
   $('#pag3_fb').removeClass('pisca-rapido');
   $('#pag3_fb').addClass('transparent');
 
@@ -128,6 +143,14 @@ function erro_fb(){
   $('#pag3_error').removeClass('transparent');
 
   setTimeout(function(){
+    $('#pag3_titulo').removeClass("bkg-fadeout");  
+    $('#pag3_titulo').addClass("bkg-fadein");
+    $('#pag3_titulo').removeClass("transparent");
+
+    $('#pag3_compartilhe').removeClass("bkg-fadeout");
+    $('#pag3_compartilhe').addClass("bkg-fadein");
+    $('#pag3_compartilhe').removeClass("transparent");
+
     $('#pag3_error').removeClass('pisca-rapido');
     $('#pag3_error').addClass('transparent');
 
@@ -138,11 +161,7 @@ function erro_fb(){
     $('#btnFb').css('z-index',12);
     $('#btnRestart').css('z-index',10);
 
-    $('#pag3_compartilhe').addClass("bkg-fadein");
-    $('#pag3_compartilhe').removeClass("transparent");
   },1333);
-
-  FB.getLoginStatus(handleSessionResponse);
 }
 
 function sucesso_fb(){
@@ -156,26 +175,36 @@ function sucesso_fb(){
   $('#btnRestart').css('z-index',12);
   $('#btnFb').css('z-index',10);
 
-  FB.getLoginStatus(handleSessionResponse);
+  FB.getLoginStatus(logoutSessionIfAuthenticated);
 
-  setTimeout(function(){location.reload();},6666);    
+  setTimeout(function(){location.reload();},6666);
 }
 
 function timeout_error(e){
   erro_fb();
 }
- 
-function handleSessionResponse(response) {
- 
-    //if we dont have a session (which means the user has been logged out, redirect the user)
-    if (!response.authResponse) {
-        alert("no FB logout required");
-        return;
-    }
- 
-    //if we do have a non-null response.session, call FB.logout(),
-    //the JS method will log the user out of Facebook and remove any authorization cookies
-    alert("FB logout now");
-    FB.logout(response.authResponse);
-}
+
+function logoutSessionIfAuthenticated(response) {
+  if (response.status === 'connected') {
+    // the user is logged in and has authenticated your
+    // app, and response.authResponse supplies
+    // the user's ID, a valid access token, a signed
+    // request, and the time the access token 
+    // and signed request each expire
+    var uid = response.authResponse.userID;
+    var accessToken = response.authResponse.accessToken;
+    FB.logout(function(response) {
+      //alert("logged out.");
+    });
+  } else if (response.status === 'not_authorized') {
+    // the user is logged in to Facebook, 
+    // but has not authenticated your app
+    //FB.logout(function(response) {
+      //alert("logged out.");
+    //});
+    //$("#btnFb").click();
+  } else {
+    // the user isn't logged in to Facebook.
+  }
+ }
 
