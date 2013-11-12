@@ -5,6 +5,7 @@ function pag1Transitions(){
 	setTimeout(function(){
 
 		//$('#bem-vindo').addClass('scale_in');
+		$('#bem-vindo').addClass('border');
 		$('#bem-vindo').addClass('enter-bottom');
 		
 		$('#pag1_fundo_B_verde').addClass("bkg-fadein");
@@ -60,12 +61,15 @@ function pag1Transitions(){
 
 	$( "#btnEntra" ).click(function() {
 		$('#bem-vindo').addClass("exit-top");
+		$('#bem-vindo').removeClass('border');
 		pag2Transitions(); 
 	});        
 
 }
 
 function pag2Transitions(){
+
+	$('#mostraCores').addClass('border');
 
 	$('#btnCriar').attr('disabled', 'disabled'); //Disable
 
@@ -151,6 +155,7 @@ function pag2Transitions(){
 
 	$( "#btnCriar" ).click(function() {
 		$('#mostraCores').addClass("exit-top");
+		$('#mostraCores').removeClass('border');
 		pag3Transitions();
 	});        
 
@@ -255,6 +260,8 @@ function pag2_seletor_cores(){
 }
 
 function pag3Transitions(){
+
+	$('#aTira').addClass('border');
 
 	$('#btnFb').attr('disabled', 'disabled');
 	$('#btnRestart').attr('disabled', 'disabled');
