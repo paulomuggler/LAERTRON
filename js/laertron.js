@@ -115,17 +115,27 @@ function fb_post_callback(response) {
 	//$('#modal_loading').modal('hide')
 
 	if (res.post_id) {
-    /*
-    var body = 'Mais uma tirinha aleatória criada no LAERTRON:';
-    FB.api('/'+laertron_fb_page_id+'/feed', 'post', { message: body }, function(response) {
-      if (!response || response.error) {
-        alert('Error occured');
-      } else {
-        alert('Post ID: ' + response.id);
-      }
+
+    FB.api('/'+res.post_id, function(r){
+      console.log(r);
+      console.log(r['link']);
+      //resp = JSON.parse(r.responseText);
+      //console.log(resp);
+
+      var body = 'Mais uma tirinha criada pelo LAERTRON!';
+      FB.api('/'+laertron_fb_page_id+'/feed', 'post', { message: body, link: r['link'] }, function(response) {
+        console.log(response);
+        if (!response || response.error) {
+          alert('Error occured');
+        } else {
+          alert('Post ID: ' + response.id);
+        }
+        sucesso_fb();
+      });
+
     });
-    */
-    sucesso_fb();
+
+
   } else {
     erro_fb();
   }

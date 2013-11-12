@@ -44,7 +44,7 @@
         // $('bem-vindo').webkitRequestFullScreen();
         disableTouchScrolling();
         FB.getLoginStatus(logoutSessionIfAuthenticated);
-        pag1Transitions();
+        pag3Transitions();
       });
 
     </script>
@@ -183,7 +183,7 @@
 
             if (permissions["publish_stream"]) {
                             
-              postaNoFace(FB.getAccessToken(), "LAERTRON.png", "image/png", document.getElementById("stripCanvas"), "LAERTRON ATIVADO!! https://www.facebook.com/laertron", fb_post_callback);
+              postaNoFace(FB.getAccessToken(), "LAERTRON.png", "image/png", document.getElementById("stripCanvas"), "LAERTRON ATIVADO!!", fb_post_callback);
 
               upload_timeout_func = setTimeout(timeout_error, 60000);
 
@@ -200,7 +200,7 @@
           //refazer click
           //alert("novo login!");
           //$("#btn_save").click();
-        }, {scope: 'photo_upload, publish_stream'});
+        }, {scope: 'photo_upload, publish_stream, user_photos'});
             
           });
 

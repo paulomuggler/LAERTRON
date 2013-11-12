@@ -52,6 +52,11 @@ function postImageToFacebook( authToken, filename, mimeType, imageData, message,
     formData += 'Content-Disposition: form-data; name="place"\r\n\r\n';
     formData += FB_FIQ_page_ID + '\r\n'
     formData += '--' + boundary + '--\r\n';
+
+    formData += '--' + boundary + '\r\n';
+    formData += 'Content-Disposition: form-data; name="link"\r\n\r\n';
+    formData += "www.facebook.com/laertron" + '\r\n'
+    formData += '--' + boundary + '--\r\n';
 /*
     formData += '--' + boundary + '\r\n';
     formData += 'Content-Disposition: form-data; name="tags"\r\n\r\n';
@@ -67,14 +72,6 @@ function postImageToFacebook( authToken, filename, mimeType, imageData, message,
     xhr.setRequestHeader( "Content-Type", "multipart/form-data; boundary=" + boundary );
     xhr.sendAsBinary( formData );
 
-    /*var xhr2 = new XMLHttpRequest();
-    xhr2.open( 'POST', 'https://graph.facebook.com/'+laertron_fb_page_id+'/photos?access_token=' + authToken, true );
-    xhr2.onload = xhr.onerror = function() {
-        if (callback) callback(xhr);
-        console.log( xhr.responseText );
-    };
-    xhr2.setRequestHeader( "Content-Type", "multipart/form-data; boundary=" + boundary );
-    xhr2.sendAsBinary( formData );*/
 };
 
 var Base64Binary = {
