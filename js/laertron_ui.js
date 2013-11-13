@@ -312,4 +312,70 @@ function disableTouchScrolling() {
     }
 }
 
-$
+$(function(){ 
+	$("#btnFb" ).click(
+		function( event ) {
+        $('#btnFb').attr('disabled', 'disabled');
+
+        $('#pag3_titulo').addClass('bkg-fadeout');
+        $('#pag3_compartilhe').addClass('bkg-fadeout');
+        $('#pag3_fb').removeClass("bkg-fadein");
+        $('#pag3_fb').addClass('pisca-rapido');
+
+        FB.login(function(response) {
+
+          console.log(response);
+          if(response.status && response.status === 'connected'){
+	          //var uid = response.authResponse.userID;
+	          //console.log(uid);
+				    FB.api('/me', function(response) {
+				      console.log(response);
+
+				      if(response.name){
+		    		  	fb_user_name = response.name;
+		    		  	message = "LAERTRON! Uma tirinha exclusiva do Laerte pra você, "+fb_user_name+"!";
+		    		  }else{
+		    		  	fb_user_name = "";
+		    		  	message = "LAERTRON! Uma tirinha exclusiva do Laerte pra você!";
+		    		  }
+
+	          	FB.api("/me/permissions", function(response){ 
+	          		console.log(response);
+
+	            	var data_length = response.data && response.data.length ? response.data.length : 0;
+	            	var permissions = data_length > 0 ? response.data[0] : {};
+
+		            if (permissions["publish_stream"]) {
+		                            
+		              postaNoFace(FB.getAccessToken(), "LAERTRON.png", "image/png", document.getElementById("stripCanvas"), message, fb_post_callback);
+		              upload_timeout_func = setTimeout(timeout_error, 60000);
+
+		            } else {
+		              erro_fb();
+		              /*
+		              setTimeout(function(){
+		                $("#btnFb").click();
+		              },1500);
+		              */
+		            }
+		          });
+
+	          //refazer click
+	          //alert("novo login!");
+	          //$("#btn_save").click();
+				    });
+					}else{
+						erro_fb();
+					}
+		    }, {scope: 'photo_upload, publish_stream, user_photos'});
+          
+      
+      });
+});
+
+$(window).load(function() {
+	// $('bem-vindo').webkitRequestFullScreen();
+	disableTouchScrolling();
+	FB.getLoginStatus(logoutSessionIfAuthenticated);
+	pag1Transitions();
+});

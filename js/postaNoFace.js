@@ -3,11 +3,11 @@
 // sample
 // postaNoFace(FB.getAccessToken(), "meuteste.png", "image/png", document.getElementById("processing-canvas"), "teste");
 
-var laertron_fb_page_id = "396702830460199";
+laertron_fb_page_id = "396702830460199";
 
-var FB_FIQ_page_ID = '209163172429690';
+FB_FIQ_page_ID = '209163172429690';
 
-var FB_laerte_profile_id = '100001110302679';
+FB_laerte_profile_id = '100001110302679';
      
 XMLHttpRequest.prototype.sendAsBinary = function(datastr) {
     function byteValue(x) {

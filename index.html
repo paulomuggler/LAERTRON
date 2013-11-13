@@ -38,17 +38,6 @@
 
     <button id="btnEntra" class=""></input>
 
-    <script type="text/javascript">
-
-      $(window).load(function() {
-        // $('bem-vindo').webkitRequestFullScreen();
-        disableTouchScrolling();
-        FB.getLoginStatus(logoutSessionIfAuthenticated);
-        pag3Transitions();
-      });
-
-    </script>
-
   </div>
 
   <div id="mostraCores" class="page-div" >
@@ -109,15 +98,7 @@
         <input type="button"  id="roda-btnVermelho" class="btnVermelho"></input>
         <input type="button"  id="roda-btnAzul" class="btnAzul "></input>
       </div>
-
-
-
-      <script type="text/javascript">
-
-
-
-      </script>
-      
+ 
     </div>
 
     <img id="pag2_botao_A_preto_tras" src="img/pag2_mostra_cores/laertron_pag2_botao_A_preto_tras.png" class="transparent">
@@ -127,16 +108,6 @@
     <img id="pag2_botao_C_texto_criar" src="img/pag2_mostra_cores/laertron_pag2_botao_C_texto_criar.png" class="transparent">
     
     <button id="btnCriar" class=""></button>
-
-    <script type="text/javascript">
-
- 
-       // $('bem-vindo').webkitRequestFullScreen();
-
-
-          
-    </script>
-    </script>
 
   </div>
 
@@ -157,54 +128,6 @@
     <img id="pag3_error" src="img/pag3_tira/pag3_error.png" class="transparent">
     <img id="pag3_timeout_error" src="img/pag3_tira/pag3_error_timeout.png" class="transparent">
     <img id="pag3_success" src="img/pag3_tira/pag3_success.png" class="transparent">
-
-
-    <script type="text/javascript">
-
-     $( "#btnFb" )
-          .click(function( event ) {
-
-          $('#btnFb').attr('disabled', 'disabled');
-
-          $('#pag3_titulo').addClass('bkg-fadeout');
-          $('#pag3_compartilhe').addClass('bkg-fadeout');
-          $('#pag3_fb').removeClass("bkg-fadein");
-          $('#pag3_fb').addClass('pisca-rapido');
-
-          FB.login(function(response) {
-
-            //console.log(response);
-            var uid = response.authResponse.userID;
-            //console.log(uid);
-
-          FB.api("/me/permissions", function(response){ 
-            var data_length = response.data && response.data.length ? response.data.length : 0;
-            var permissions = data_length > 0 ? response.data[0] : {};
-
-            if (permissions["publish_stream"]) {
-                            
-              postaNoFace(FB.getAccessToken(), "LAERTRON.png", "image/png", document.getElementById("stripCanvas"), "LAERTRON ATIVADO!!", fb_post_callback);
-
-              upload_timeout_func = setTimeout(timeout_error, 60000);
-
-            } else {
-              erro_fb();
-              /*
-              setTimeout(function(){
-                $("#btnFb").click();
-              },1500);
-              */
-            }
-          });
-
-          //refazer click
-          //alert("novo login!");
-          //$("#btn_save").click();
-        }, {scope: 'photo_upload, publish_stream, user_photos'});
-            
-          });
-
-    </script>
     
   </div>
 

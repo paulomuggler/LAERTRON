@@ -102,8 +102,6 @@ function sorteio_animado(){
 
 }
 
-
-
 function fb_post_callback(response) {
 
   clearTimeout(upload_timeout_func);
@@ -111,25 +109,27 @@ function fb_post_callback(response) {
   console.log(response);
 
   res = JSON.parse(response.responseText);
-	
-	//$('#modal_loading').modal('hide')
 
-	if (res.post_id) {
-
-    FB.api('/'+res.post_id, function(r){
+  if (res.post_id) {
+    
+    FB.api('/'+res.id, function(r){
       console.log(r);
-      console.log(r['link']);
+      //console.log(r['source']);
+      //console.log(r['images']);
+      console.log(r['images'][0]['source']);
       //resp = JSON.parse(r.responseText);
       //console.log(resp);
 
-      var body = 'Mais uma tirinha criada pelo LAERTRON!';
-      FB.api('/'+laertron_fb_page_id+'/feed', 'post', { message: body, link: r['link'] }, function(response) {
+      var body = 'LAERTRON! Ganhei uma tirinha exclusiva do Laerte!';
+            
+      FB.api('/'+laertron_fb_page_id+'/photos', 'post', { message: body, url: r['images'][0]['source'], place: FB_FIQ_page_ID }, function(response) {
+      //FB.api('/397286000401882/photos', 'post', { message: body, url: r['source'], place: FB_FIQ_page_ID }, function(response) {
         console.log(response);
-        if (!response || response.error) {
-          alert('Error occured');
-        } else {
-          alert('Post ID: ' + response.id);
-        }
+        //if (!response || response.error) {
+          //alert('Error occured');
+        //} else {
+          //alert('Post ID: ' + response.id);
+        //}
         sucesso_fb();
       });
 
@@ -175,6 +175,8 @@ function erro_fb(){
 }
 
 function sucesso_fb(){
+  FB.getLoginStatus(logoutSessionIfAuthenticated);
+
   $('#pag3_fb').addClass('transparent');
   $('#pag3_fb').removeClass('pisca-rapido');
 
@@ -184,8 +186,6 @@ function sucesso_fb(){
   $('#btnRestart').removeAttr('disabled');
   $('#btnRestart').css('z-index',12);
   $('#btnFb').css('z-index',10);
-
-  FB.getLoginStatus(logoutSessionIfAuthenticated);
 
   setTimeout(function(){location.reload();},6666);
 }
@@ -207,6 +207,13 @@ function logoutSessionIfAuthenticated(response) {
       //alert("logged out.");
     });
   } else if (response.status === 'not_authorized') {
+    // the user is logged in to Facebook, 
+    // but has not authenticated your app
+    //FB.logout(function(response) {
+      //alert("logged out.");
+    //});
+    //$("#btnFb").click();
+  }else if (response.status === 'unknown') {
     // the user is logged in to Facebook, 
     // but has not authenticated your app
     //FB.logout(function(response) {
