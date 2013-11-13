@@ -302,7 +302,7 @@ function pag3Transitions(){
 		location.reload();
 	});
 
-	setTimeout(function(){location.reload();},60*1000*5);
+	setTimeout(function(){location.reload();},60*1000*3);
 
 }
 
