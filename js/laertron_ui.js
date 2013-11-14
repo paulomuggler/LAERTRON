@@ -312,6 +312,12 @@ function disableTouchScrolling() {
     }
 }
 
+ativaBtnFb = function () {
+                      $("#btnFb").removeAttr("disabled");
+                      $("#pag3_fb").removeClass("pisca-rapido");
+               };
+
+
 $(function(){ 
 	$("#btnFb" ).click(
 		function( event ) {
@@ -323,6 +329,9 @@ $(function(){
         $('#pag3_fb').addClass('pisca-rapido');
 
         FB.login(function(response) {
+          $(window).unbind("focus", ativaBtnFb);
+          $('#btnFb').attr('disabled', 'disabled');
+	  $('#pag3_fb').addClass('pisca-rapido');
 
           console.log(response);
           if(response.status && response.status === 'connected'){
@@ -368,6 +377,8 @@ $(function(){
 						erro_fb();
 					}
 		    }, {scope: 'photo_upload, publish_stream, user_photos'});
+		    
+	$(window).focus(ativaBtnFb);
           
       
       });
